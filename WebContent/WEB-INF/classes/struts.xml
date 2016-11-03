@@ -8,9 +8,9 @@
 	<package name="basicstruts2" extends="struts-default">   
 	<default-action-ref name="defaultaction"/>
 		
-	<action name="CheckUserRightOrNot" class="Action.CheckUserRightOrNotAction" method="login">
-			<result name="success" type="redirect">/FirstPage.jsp</result>
-			<result name="input">/login.jsp</result>
+	<action name="CheckUserRightOrNot" class="Action.CheckUserRightOrNotAction" method="execute">
+			<result name="success">/FirstPage.jsp</result>
+			<result name="error">/login.jsp</result>
 	</action>	
 	
 	

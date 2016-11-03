@@ -22,7 +22,7 @@
 });
 </script>
  <!--SIGN UP-->
- <h1>Welcome to our websit!</h1>
+ <h1>Welcome to our website!</h1>
 <div class="login-form">
 	<div class="close"> </div>
 		<div class="head-info">
@@ -35,14 +35,16 @@
 		<img src="images/avtar.png" />
 	</div>
 			<form action="CheckUserRightOrNot" method="post">
-					<input type="text" class="text" value="Email Address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email Address';}" >
+					<input type="text" class="text" name = "userEmail" value="Email Address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email Address';}" >
 						<div class="key">
-					<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
+					<input type="password" name = "userPassword" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
 						</div>
-			</form>
+			
 	<div class="signin">
 		<input type="submit" value="Login" >
 	</div>
+	
+	</form>
 </div>
 
 </body>
