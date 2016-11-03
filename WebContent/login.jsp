@@ -13,6 +13,7 @@
 
 </head>
 <body>
+
 <script>$(document).ready(function(c) {
 	$('.close').on('click', function(c){
 		$('.login-form').fadeOut('slow', function(c){
@@ -21,8 +22,10 @@
 	});	  
 });
 </script>
+
  <!--SIGN UP-->
  <h1>Welcome to our website!</h1>
+ <h1><li><a href="registration.jsp" class="current">注册</a></li></h1>
 <div class="login-form">
 	<div class="close"> </div>
 		<div class="head-info">
@@ -43,7 +46,6 @@
 	<div class="signin">
 		<input type="submit" value="Login" >
 	</div>
-	
 	</form>
 </div>
 
