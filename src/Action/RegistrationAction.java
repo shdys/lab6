@@ -22,7 +22,15 @@ public class RegistrationAction {
 	private String userPassword = null;
 	private String userName = null;
 	private String userSex = null;
-	
+	private String rePassword = null;
+
+	public String getRePassword() {
+		return rePassword;
+	}
+
+	public void setRePassword(String rePassword) {
+		this.rePassword = rePassword;
+	}
 
 	public String getUserEmail() {
 		return userEmail;
@@ -57,6 +65,8 @@ public class RegistrationAction {
 	}
 	
 	public String execute(){
+		if(getUserPassword().equals(getRePassword()))
+		{
 		try {
 			UploadSQL up = new UploadSQL();
 			boolean isUser = up.setNewUser(getUserEmail(),getUserPassword(),getUserName(),getUserSex());
@@ -66,6 +76,11 @@ public class RegistrationAction {
 			return Action.ERROR;
 		} catch (Exception e) {
 			return Action.ERROR;
+		}
+		}
+		else
+		{
+			return "PasswordNotEqual";
 		}
 	}
 }

@@ -15,7 +15,7 @@
 </br>
 </br>
 </br>
-<h1>Some places has gone wrong...</h1>
+<h1>The password and the repassword are not equal.</h1>
 </center>
 </body>
 </html>

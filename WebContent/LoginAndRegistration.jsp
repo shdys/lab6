@@ -73,7 +73,7 @@
 						</div>
 						
 						<div class="form-group">
-							<input name="userSex" id="gender" type="radio"> Male <input name="userSex" id="gender" type="radio"> Female 
+							<input name="userSex" id="gender" type="radio" value = "male"> Male <input name="userSex" id="gender" type="radio" value = "female"> Female 
 						</div>
 						
 						<div class="form-group">
@@ -82,10 +82,6 @@
 						
 						<div class="form-group">
 							<input type="password" class="form-control" placeholder="Retype Password :" name="rePassword" id="repassword" required>
-						</div>
-						
-						<div class="form-group">
-							<input name="agree" id="agree" type="checkbox" > I agree to your website.
 						</div>
 						
 						<button type="submit" class="btn btn-1" name="registration">Create</button>

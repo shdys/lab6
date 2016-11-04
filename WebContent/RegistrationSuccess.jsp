@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Error</title>
+<title>Successed</title>
 </head>
 <body>
 <li><a href="LoginAndRegistration.jsp" class="current">Return to the page of login and registration.</a></li>
@@ -14,8 +14,8 @@
 </br>
 </br>
 </br>
-</br>
-<h1>Some places has gone wrong...</h1>
+<h1>Welcome You!</h1>
+<h2>The registration has successed.</h2>
 </center>
 </body>
 </html>
