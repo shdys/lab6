@@ -10,11 +10,14 @@
 		
 	<action name="CheckUserRightOrNot" class="Action.CheckUserRightOrNotAction" method="execute">
 			<result name="success">/FirstPage.jsp</result>
-			<result name="error">/Error.jsp</result>
+			<result name="error">/LoginAndRegistration.jsp</result>
 	</action>	
 	
-	
-		
+	<action name="Registration" class="Action.RegistrationAction" method="execute">
+			<result name="success">/FirstPage.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
+
 	</package>  
 </struts>  
 

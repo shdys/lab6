@@ -47,6 +47,7 @@
 			<div class="row">
 				<div class="col-md-6">
 					<div class="heading"><h2>Login</h2></div>
+					
 					<form name="form1" id="ff1" method="post" action="CheckUserRightOrNot">
 						<div class="form-group">
 							<input type="text" class="form-control" placeholder="Username :" name="userEmail" id="username" required>
@@ -57,35 +58,37 @@
 						<button type="submit" class="btn btn-1" name="login" id="login">Login</button>
 						<a href="#">Forgot Your Password ?</a>
 					</form>
+					
 				</div>
 				<div class="col-md-6">
 					<div class="heading"><h2>New User ? Create An Account.</h2></div>
-					<form name="form2" id="ff2" method="post" action="register.php">
+					
+					<form name="form2" id="ff2" method="post" action="Registration">
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="First Name :" name="firstname" id="firstname" required>
+							<input type="text" class="form-control" placeholder="Name :" name="userName" id="firstname" required>
 						</div>
+
 						<div class="form-group">
-							<input type="email" class="form-control" placeholder="Last Name :" name="lastname" id="lastname" required>
+							<input type="tel" class="form-control" placeholder="Email Address :" name="userEmail" id="email" required>
 						</div>
+						
 						<div class="form-group">
-							<input type="tel" class="form-control" placeholder="Email Address :" name="email" id="email" required>
+							<input name="userSex" id="gender" type="radio"> Male <input name="userSex" id="gender" type="radio"> Female 
 						</div>
+						
 						<div class="form-group">
-							<input type="tel" class="form-control" placeholder="Mobile :" name="phone" id="phone" required>
+							<input type="password" class="form-control" placeholder="Password :" name="userPassword" id="password" required>
 						</div>
+						
 						<div class="form-group">
-							<input name="gender" id="gender" type="radio"> Male <input name="gender" id="gender" type="radio"> Female 
+							<input type="password" class="form-control" placeholder="Retype Password :" name="rePassword" id="repassword" required>
 						</div>
-						<div class="form-group">
-							<input type="password" class="form-control" placeholder="Password :" name="password" id="password" required>
-						</div>
-						<div class="form-group">
-							<input type="password" class="form-control" placeholder="Retype Password :" name="repassword" id="repassword" required>
-						</div>
+						
 						<div class="form-group">
 							<input name="agree" id="agree" type="checkbox" > I agree to your website.
 						</div>
-						<button type="submit" class="btn btn-1">Create</button>
+						
+						<button type="submit" class="btn btn-1" name="registration">Create</button>
 					</form>
 				</div>
 			</div>
