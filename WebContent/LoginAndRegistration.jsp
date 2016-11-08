@@ -69,7 +69,7 @@
 						</div>
 
 						<div class="form-group">
-							<input type="tel" class="form-control" placeholder="Email Address :" name="userEmail" id="email" required>
+							<input type="tel" class="form-control" placeholder="Email Address :" name="userEmail" id="email2" required>
 						</div>
 						
 						<div class="form-group">
@@ -99,6 +99,17 @@
 
 function check1() 
 {
+var email2=document.getElementById("email2").value;
+var apos=email2.indexOf("@");
+var dotpos=email2.lastIndexOf(".");
+if(apos<1||dotpos-apos<2)
+{
+	alert("邮箱格式不正确！");
+	return false;
+}
+
+	
+
 var pd1=document.getElementById("password").value;
 var pd2=document.getElementById("repassword").value;
 if (pd1!=pd2) 
