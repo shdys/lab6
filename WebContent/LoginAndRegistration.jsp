@@ -73,7 +73,7 @@
 						</div>
 						
 						<div class="form-group">
-							<input name="userSex" id="gender" type="radio" value = "male"> Male <input name="userSex" id="gender" type="radio" value = "female"> Female 
+							<input name="userSex" id="gender" type="radio" value = "male" required> Male <input name="userSex" id="gender" type="radio" value = "female" required> Female 
 						</div>
 						
 						<div class="form-group">
@@ -84,7 +84,8 @@
 							<input type="password" class="form-control" placeholder="Retype Password :" name="rePassword" id="repassword" required>
 						</div>
 						
-						<button type="submit" class="btn btn-1" name="registration">Create</button>
+						<button onclick="return check1()" type="submit" class="btn btn-1" name="registration">Create</button>
+						<button type="reset" class="btn btn-1" name="reset">Reset</button>
 					</form>
 				</div>
 			</div>
@@ -93,3 +94,19 @@
 	
 </body>
 </html>
+
+<script language="JavaScript">
+
+function check1() 
+{
+var pd1=document.getElementById("password").value;
+var pd2=document.getElementById("repassword").value;
+if (pd1!=pd2) 
+{
+alert("两次密码不一致！");
+return false;
+}
+return true;
+}
+
+</script> 
