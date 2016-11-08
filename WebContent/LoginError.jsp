@@ -7,7 +7,7 @@
 <title>Error</title>
 </head>
 <body>
-<li><a href="LoginAndRegistration.jsp" class="current">Return to the page of login and registration.</a></li>
+<li><a href="javascript:history.back()" class="current">Return to the page of login and registration.</a></li>
 <center>
 </br>
 </br>
