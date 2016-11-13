@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" %>
+<%@ page import="java.sql.*" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -10,6 +13,42 @@
 <meta name="author" content="">
 <meta name="description" content="">
 <meta name="keywords" content="">
+
+
+
+
+
+<style type="text/css">
+ table.hovertable {
+font-family: verdana,arial,sans-serif;
+font-size:11px;
+color:#333333;
+border-width: 1px;
+border-color: #999999;
+border-collapse: collapse;
+ }
+ table.hovertable th {
+background-color:#c3dde0;
+border-width: 1px;
+padding: 8px;
+border-style: solid;
+border-color: #a9c6c9;
+ }
+ table.hovertable tr {
+background-color:#d4e3e5;
+ }
+ table.hovertable td {
+border-width: 1px;
+padding: 8px;
+border-style: solid;
+border-color: #a9c6c9;
+ }
+</style>
+
+
+ 
+ 
+
 
 <!-- Mobile specific meat 
 ==============================================-->
@@ -31,7 +70,13 @@
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <script src="js/html5shiv.js"></script>
 <script src="js/respond.min.js"></script>
-
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+<%! String url = "jdbc:mysql://localhost:3306/aa_dutch";
+String qstr="select * from Student";
+%>
 </head>
 <body>
 <!-- Start Header Top area -->
@@ -74,12 +119,11 @@
 	  <script type ="text/javascript" >
 		 var curIndex=0;
 		 //时间间隔 单位毫秒
-		var timeInterval=10000;
+		var timeInterval=2000;
 		 var arr=new Array();
-		 arr[0]="img/slider/2.jpg";
-		 arr[1]="img/slider/3.jpg";
-		 arr[2]="img/slider/4.jpg";
-		 arr[3]="img/slider/5.jpg";
+		 arr[0]="img/slider/1.jpg";
+		 arr[1]="img/slider/2.jpg";
+		 arr[2]="img/slider/3.jpg";
 		setInterval(changeImg,timeInterval);
 		function changeImg()
 		{
@@ -128,7 +172,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<form action="#">
+			<form name="forma" id="ff2" method="post" action="Registration">
 				<div class="col-md-3 col-sm-6">
 					<div class="single-query">
 						<label for="keyword-input">Activity name</label>
@@ -177,246 +221,55 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="properties-title">
-					<h2>Featured Activities</h2>
-					<a href="#" class="view-more">View all</a>
+					<h2>Your Activities</h2>
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-md-4 col-sm-6">
-				<div class="single-featured-properties">
-					<div class="properties-image">
-						<a href="#"><img src="img/properties/1.jpg" alt=""></a>
-					</div>
-					<div class="sale-tag">
-						<p>For Sale</p>
-					</div>
-					<div class="properties-include">
-						<ul>
-							<li><i class="fa fa-home"></i> 30,000 Acres</li>
-							<li><i class="fa fa-bed"></i>4 Bedrooms</li>
-							<li><i class="fa fa-tty"></i> 4 Bathrooms</li>
-						</ul>
-					</div>
-					<div class="properties-content">
-						<h3><a href="#">South Mervin Boulevard</a></h3>
-						<p><i class="fa fa-map-marker"></i> Merrick Way, Miami, USA</p>
-						<p class="detail-text">Lorem ipsum dolor sit amet, consectetuer adipiing elit. Aenean commodo ligula eget dolor. </p>
-						<div class="price-detail">
-							<p class="price-range pull-left">$ 1,23,00.000</p>
-							<a href="#" class="price-detail pull-right">Details <i class="fa fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-			</div> 
-			<!-- End of Single properties -->
-			<div class="col-md-4 col-sm-6">
-				<div class="single-featured-properties">
-					<div class="properties-image">
-						<a href="#"><img src="img/properties/2.jpg" alt=""></a>
-					</div>
-					<div class="sale-tag">
-						<p>For Sale</p>
-					</div>
-					<div class="properties-include">
-						<ul>
-							<li><i class="fa fa-home"></i> 30,000 Acres</li>
-							<li><i class="fa fa-bed"></i>4 Bedrooms</li>
-							<li><i class="fa fa-tty"></i> 4 Bathrooms</li>
-						</ul>
-					</div>
-					<div class="properties-content">
-						<h3><a href="#">South Mervin Boulevard</a></h3>
-						<p><i class="fa fa-map-marker"></i> Merrick Way, Miami, USA</p>
-						<p class="detail-text">Lorem ipsum dolor sit amet, consectetuer adipiing elit. Aenean commodo ligula eget dolor. </p>
-						<div class="price-detail">
-							<p class="price-range pull-left">$ 1,23,00.000</p>
-							<a href="#" class="price-detail pull-right">Details <i class="fa fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- End of Single properties -->
-			<div class="col-md-4 col-sm-6">
-				<div class="single-featured-properties">
-					<div class="properties-image">
-						<a href="#"><img src="img/properties/3.jpg" alt=""></a>
-					</div>
-					<div class="sale-tag">
-						<p>For Sale</p>
-					</div>
-					<div class="properties-include">
-						<ul>
-							<li><i class="fa fa-home"></i> 30,000 Acres</li>
-							<li><i class="fa fa-bed"></i>4 Bedrooms</li>
-							<li><i class="fa fa-tty"></i> 4 Bathrooms</li>
-						</ul>
-					</div>
-					<div class="properties-content">
-						<h3><a href="#">South Mervin Boulevard</a></h3>
-						<p><i class="fa fa-map-marker"></i> Merrick Way, Miami, USA</p>
-						<p class="detail-text">Lorem ipsum dolor sit amet, consectetuer adipiing elit. Aenean commodo ligula eget dolor. </p>
-						<div class="price-detail">
-							<p class="price-range pull-left">$ 1,23,00.000</p>
-							<a href="#" class="price-detail pull-right">Details <i class="fa fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- End of Single properties -->
-			<div class="col-md-4 col-sm-6 hidden-md hidden-lg">
-				<div class="single-featured-properties">
-					<div class="properties-image">
-						<a href="#"><img src="img/properties/3.jpg" alt=""></a>
-					</div>
-					<div class="sale-tag">
-						<p>For Sale</p>
-					</div>
-					<div class="properties-include">
-						<ul>
-							<li><i class="fa fa-home"></i> 30,000 Acres</li>
-							<li><i class="fa fa-bed"></i>4 Bedrooms</li>
-							<li><i class="fa fa-tty"></i> 4 Bathrooms</li>
-						</ul>
-					</div>
-					<div class="properties-content">
-						<h3><a href="#">South Mervin Boulevard</a></h3>
-						<p><i class="fa fa-map-marker"></i> Merrick Way, Miami, USA</p>
-						<p class="detail-text">Lorem ipsum dolor sit amet, consectetuer adipiing elit. Aenean commodo ligula eget dolor. </p>
-						<div class="price-detail">
-							<p class="price-range pull-left">$ 1,23,00.000</p>
-							<a href="#" class="price-detail pull-right">Details <i class="fa fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- End of Single Activities -->
-		</div>
-		<!-- Start of Recent Activities Title Area-->
-		<div class="row">
-			<div class="col-md-12">
-				<div class="properties-title margintop100">
-					<h2>Recent Activitiess</h2>
-					<a href="#" class="view-more">View all</a>
-				</div>
-			</div>
-		</div> 
-		<!-- End of Recent Activities Title Area-->
-		<!--Start of Recent Single Recent Properties  Area -->
-		<div class="row">
-			<div class="col-md-4 col-sm-6">
-				<div class="single-featured-properties">
-					<div class="properties-image">
-						<a href="#"><img src="img/properties/4.jpg" alt=""></a>
-					</div>
-					<div class="sale-tag">
-						<p>For Sale</p>
-					</div>
-					<div class="properties-include">
-						<ul>
-							<li><i class="fa fa-home"></i> 30,000 Acres</li>
-							<li><i class="fa fa-bed"></i>4 Bedrooms</li>
-							<li><i class="fa fa-tty"></i> 4 Bathrooms</li>
-						</ul>
-					</div>
-					<div class="properties-content">
-						<h3><a href="#">South Mervin Boulevard</a></h3>
-						<p><i class="fa fa-map-marker"></i> Merrick Way, Miami, USA</p>
-						<p class="detail-text">Lorem ipsum dolor sit amet, consectetuer adipiing elit. Aenean commodo ligula eget dolor. </p>
-						<div class="price-detail">
-							<p class="price-range pull-left">$ 1,23,00.000</p>
-							<a href="#" class="price-detail pull-right">Details <i class="fa fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- End of Single properties -->
-			<div class="col-md-4 col-sm-6">
-				<div class="single-featured-properties">
-					<div class="properties-image">
-						<a href="#"><img src="img/properties/5.jpg" alt=""></a>
-					</div>
-					<div class="sale-tag">
-						<p>For Sale</p>
-					</div>
-					<div class="properties-include">
-						<ul>
-							<li><i class="fa fa-home"></i> 30,000 Acres</li>
-							<li><i class="fa fa-bed"></i>4 Bedrooms</li>
-							<li><i class="fa fa-tty"></i> 4 Bathrooms</li>
-						</ul>
-					</div>
-					<div class="properties-content">
-						<h3><a href="#">South Mervin Boulevard</a></h3>
-						<p><i class="fa fa-map-marker"></i> Merrick Way, Miami, USA</p>
-						<p class="detail-text">Lorem ipsum dolor sit amet, consectetuer adipiing elit. Aenean commodo ligula eget dolor. </p>
-						<div class="price-detail">
-							<p class="price-range pull-left">$ 1,23,00.000</p>
-							<a href="#" class="price-detail pull-right">Details <i class="fa fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- End of Single properties -->
-			<div class="col-md-4 col-sm-6">
-				<div class="single-featured-properties">
-					<div class="properties-image">
-						<a href="#"><img src="img/properties/6.jpg" alt=""></a>
-					</div>
-					<div class="sale-tag">
-						<p>For Sale</p>
-					</div>
-					<div class="properties-include">
-						<ul>
-							<li><i class="fa fa-home"></i> 30,000 Acres</li>
-							<li><i class="fa fa-bed"></i>4 Bedrooms</li>
-							<li><i class="fa fa-tty"></i> 4 Bathrooms</li>
-						</ul>
-					</div>
-					<div class="properties-content">
-						<h3><a href="#">South Mervin Boulevard</a></h3>
-						<p><i class="fa fa-map-marker"></i> Merrick Way, Miami, USA</p>
-						<p class="detail-text">Lorem ipsum dolor sit amet, consectetuer adipiing elit. Aenean commodo ligula eget dolor. </p>
-						<div class="price-detail">
-							<p class="price-range pull-left">$ 1,23,00.000</p>
-							<a href="#" class="price-detail pull-right">Details <i class="fa fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- End of Single properties -->
-			<div class="col-md-4 col-sm-6 hidden-md hidden-lg">
-				<div class="single-featured-properties">
-					<div class="properties-image">
-						<a href="#"><img src="img/properties/6.jpg" alt=""></a>
-					</div>
-					<div class="sale-tag">
-						<p>For Sale</p>
-					</div>
-					<div class="properties-include">
-						<ul>
-							<li><i class="fa fa-home"></i> 30,000 Acres</li>
-							<li><i class="fa fa-bed"></i>4 Bedrooms</li>
-							<li><i class="fa fa-tty"></i> 4 Bathrooms</li>
-						</ul>
-					</div>
-					<div class="properties-content">
-						<h3><a href="#">South Mervin Boulevard</a></h3>
-						<p><i class="fa fa-map-marker"></i> Merrick Way, Miami, USA</p>
-						<p class="detail-text">Lorem ipsum dolor sit amet, consectetuer adipiing elit. Aenean commodo ligula eget dolor. </p>
-						<div class="price-detail">
-							<p class="price-range pull-left">$ 1,23,00.000</p>
-							<a href="#" class="price-detail pull-right">Details <i class="fa fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- End of Single properties -->
-		</div> 
-		<!-- End of Recent Single Recent Properties  Area -->
-	</div>
-</section>
-<!-- End of Properties Area-->
+</div>
+
+
+<!--
+<link rel="stylesheet" type="text/css" href="styles.css">
+-->
+  </head>
+  
+  <body><center><<table width="704" height="500" border="1" class="hovertable">
+ <%
+   Class.forName("com.mysql.jdbc.Driver").newInstance();
+   Connection conn = DriverManager.getConnection(url, "root", "1234");
+   Statement stmt = conn.createStatement();
+   ResultSet rs = stmt.executeQuery("select * from activity");
+   ResultSetMetaData rsmd = rs.getMetaData();
+   int NumOfColumns = rsmd.getColumnCount();
+   for(int f=1; f<=NumOfColumns;f++){
+  %>
+ <th><%=rsmd.getColumnName(f)%></th>
+     <%}
+     while(rs.next()){
+      %>
+      <tr>
+      
+ <tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+    <%
+for(int i=1; i<=NumOfColumns;i++){
+%>
+
+<td><%=rs.getString(i)%></td>
+
+<%}%>
+
+
+</tr>
+</tr>
+<%}
+rs.close();
+stmt.close();
+conn.close();
+%>
+
+
+
+
 <!-- Placed js at the end of the document so the pages load faster -->
 <!-- Main jQuery file -->
 <script src="js/jquery-1.11.3.min.js"></script>
