@@ -233,12 +233,12 @@ String qstr="select * from Student";
 -->
   </head>
   
-  <body><center><<table width="704" height="500" border="1" class="hovertable">
+  <body><center><table width="704" height="500" border="1"  class="hovertable">
  <%
    Class.forName("com.mysql.jdbc.Driver").newInstance();
    Connection conn = DriverManager.getConnection(url, "root", "1234");
    Statement stmt = conn.createStatement();
-   ResultSet rs = stmt.executeQuery("select * from activity");
+   ResultSet rs = stmt.executeQuery("select * from activity where Owner='"+ename+"'");
    ResultSetMetaData rsmd = rs.getMetaData();
    int NumOfColumns = rsmd.getColumnCount();
    for(int f=1; f<=NumOfColumns;f++){
