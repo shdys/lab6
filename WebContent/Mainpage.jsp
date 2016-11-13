@@ -71,7 +71,32 @@
 
 	<div class="item">
 	  <div class="item">
-			<img src="img/slider/3.jpg" alt="">
+	  <script type ="text/javascript" >
+		 var curIndex=0;
+		 //时间间隔 单位毫秒
+		var timeInterval=10000;
+		 var arr=new Array();
+		 arr[0]="img/slider/2.jpg";
+		 arr[1]="img/slider/3.jpg";
+		 arr[2]="img/slider/4.jpg";
+		 arr[3]="img/slider/5.jpg";
+		setInterval(changeImg,timeInterval);
+		function changeImg()
+		{
+		 var obj=document.getElementById("obj");
+		 if (curIndex==arr.length-1) 
+		 {
+		 curIndex=0;
+		 }
+		 else
+		 {
+		 curIndex+=1;
+		 }
+		 obj.src=arr[curIndex];
+		}
+		</script>
+		<img id=obj src ="img/slider/1.jpg" border =0 />
+
 			<div class="slide-content carousel-caption hidden-xs">
 				<div class="slide-content-top">
 					<h1>Secret-recipe</h1>
@@ -90,37 +115,6 @@
 		</div>
 	</div>
 <!-- Slider Area End -->
-<div id="myCarousel" class="carousel slide">
-    <!-- 轮播（Carousel）指标 -->
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" 
-            class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>   
-    <!-- 轮播（Carousel）项目 -->
-    <div class="carousel-inner">
-        <div class="item active">
-            <img src="img/slider/3.jpg" alt="First slide">
-        </div>
-        <div class="item">
-            <img src="img/slider/3.jpg" alt="Second slide">
-        </div>
-        <div class="item">
-            <img src="img/slider/3.jpg" alt="Third slide">
-        </div>
-    </div>
-    <!-- 轮播（Carousel）导航 -->
-    <a class="carousel-control left" href="#myCarousel" 
-        data-slide="prev">&lsaquo;</a>
-    <a class="carousel-control right" href="#myCarousel" 
-        data-slide="next">&rsaquo;</a>
-    <!-- 控制按钮 -->
-</div> 
-
-
-
-
 
 
 <!-- Property query area start -->
