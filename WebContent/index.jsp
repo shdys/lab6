@@ -7,8 +7,18 @@
 <title>welcome</title>
 </head>
 <body>
-<form action="result" method="post">
-<input type="submit" value="计算" id="searchbutton" >
+ <form action="add">
+ <p><input type="text" id="searchbox" name="email"></p>
+	<button class="btn btn-default btn-lg" type="submit">计算</button>	
+	<!--  <input type="submit" value="计算" id="searchbutton" >-->
 </form>
+
+<!-- <form  action="add" method="get">
+	<input type="submit" value="jisuan">
+	
+</form> 
+-->
+
+      		
 </body>
 </html>
