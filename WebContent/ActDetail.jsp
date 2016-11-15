@@ -30,6 +30,7 @@
  
     request.setCharacterEncoding("gbk");
     Object ename= session.getAttribute("ename");
+    ename = (String)ename;
     out.println(ename);
     String name = request.getParameter("name");
     out.println(name);
@@ -38,6 +39,22 @@
     String sum = request.getParameter("sum");
     out.println(sum);
     String type = request.getParameter("type");
+    if(type.substring(0,1).equals("1"))
+    {
+    	type="Normal";
+    }
+    if(type.substring(0,1).equals("2"))
+	{
+		type="Girls for free";
+	}
+    if(type.substring(0,1).equals("3"))
+	{
+		type="Leaving early pay more";
+	}
+    if(type.substring(0,1).equals("4"))
+	{
+		type="Other";
+	}
     out.println(type);
 
     
@@ -55,7 +72,7 @@
  
 	conn = DriverManager.getConnection(url, user, password);
     stat = conn.createStatement(); 
-    String sql = "insert into activity(Owner,Act_name,Number,Sum,Type) values(" + ename + ",'" + name + ",'" + num + ",'" + sum + ",'" + type  + "')";
+    String sql = "insert into activity(Owner,Act_name,Number,Sum,Type) values('" + ename + "','" + name + "','" + num + "','" + sum + "','" + type  + "')";
     stat.executeUpdate(sql); 
     rs = stat.executeQuery("select * from activity"); }
  
@@ -69,10 +86,10 @@ catch(Exception e){}
      
     if(rs.next())
     {
-    out.print("<br><h3>成功输入！</h3>");
+    out.println("<br><h3>成功输入！</h3>");
     }
     else{
-    out.print("<br><h3>输入失败！</h3>");
+    out.println("<br><h3>输入失败！</h3>");
     }
   }
   catch(Exception e){}
