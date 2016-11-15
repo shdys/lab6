@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import Model.Activity;
 
 //import model.Author;
 //import model.Book;
@@ -11,25 +12,31 @@ import java.util.ArrayList;
 
 public class DownloadSQL {
 	static DataBaseConnector connection = new DataBaseConnector();
-	public String getActivityPeople(String emailofcreater){
+
+
+	public Activity getActivitySandN(String Owner){
 		 connection.ConnectDataBase();
 		 PreparedStatement pst = null;
 		 ResultSet rs = null;
-		 String SEARCH_SQL = "SELECT people from activity WHERE email = ?";
+		 String SEARCH_SQL = "SELECT Number,Sum,Type from activity WHERE Owner = ?";
 
 		try {
-			String peoplenumber="";
+			Activity acty=new Activity();
 			pst = connection.connect.prepareStatement(SEARCH_SQL);
 
-			pst.setString(1, emailofcreater);
+			pst.setString(1, Owner);
 
 			rs = pst.executeQuery();
+			
 
 			while (rs.next()) {
-				peoplenumber = rs.getString("people");
+				acty.setUserEmail(Owner);
+				acty.setNumber(rs.getString("Number"));
+				acty.setSum(rs.getString("Sum"));
+				acty.setType(rs.getString("Type"));
 			}
 			pst.close();
-			return peoplenumber;
+	        return acty;
 		    } 
 		    catch (SQLException e) {
 			e.printStackTrace();
@@ -38,59 +45,6 @@ public class DownloadSQL {
 	}
 	
 	
-	public String getActivityMoney(String emailofcreater){
-		 connection.ConnectDataBase();
-		 PreparedStatement pst = null;
-		 ResultSet rs = null;
-		 String SEARCH_SQL = "SELECT money from activity WHERE email = ?";
-
-		try {
-			String totalmoney="";
-			pst = connection.connect.prepareStatement(SEARCH_SQL);
-
-			pst.setString(1, emailofcreater);
-
-			rs = pst.executeQuery();
-
-			while (rs.next()) {
-				totalmoney = rs.getString("money");
-			}
-			pst.close();
-			return totalmoney;
-		    } 
-		    catch (SQLException e) {
-			e.printStackTrace();
-			return null;
-		    }
-	}
-	
-	
-	
-	public String getActivityType(String emailofcreater){
-		 connection.ConnectDataBase();
-		 PreparedStatement pst = null;
-		 ResultSet rs = null;
-		 String SEARCH_SQL = "SELECT paymenttype from activity WHERE email = ?";
-
-		try {
-			String type="";
-			pst = connection.connect.prepareStatement(SEARCH_SQL);
-
-			pst.setString(1, emailofcreater);
-
-			rs = pst.executeQuery();
-
-			while (rs.next()) {
-				type = rs.getString("paymenttype");
-			}
-			pst.close();
-			return type;
-		    } 
-		    catch (SQLException e) {
-			e.printStackTrace();
-			return null;
-		    }
-	}
 	
 /*	public Author getAuthorByID(int AuthorID){
 		 connection.ConnectDataBase();

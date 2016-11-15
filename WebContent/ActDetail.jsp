@@ -44,7 +44,7 @@
     if(type.substring(0,1).equals("1"))
     {
     	type="Normal";
-    	 response.sendRedirect("normal.jsp");
+    	 response.sendRedirect("index.jsp");
     }
     else if(type.substring(0,1).equals("2"))
 	{

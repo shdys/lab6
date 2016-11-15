@@ -9,8 +9,10 @@
 	<package name="basicstruts2" extends="struts-default">  
 		
 		
-        <action name="add" class="Action.calculation" method="execute">
-            <result name="NORMAL">finalresult.jsp</result>
+        <action name="Add" class="Action.calculation" method="execute">
+            <result name="Normal">/normalresult.jsp</result>
+            <result name="Girls for free">/girlsresult.jsp</result>
+            <result name="Leaving early pay more">extraresult.jsp</result>
             <result name="ERROR">/error.jsp</result>
         </action>
   
