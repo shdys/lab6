@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DataBaseConnector {
-	static String url = "jdbc:mysql://localhost:3306/draven?characterEncoding=utf-8";
+	static String url = "jdbc:mysql://localhost:3306/draven";
 	static String user = "root";
 	static String password = "4217";
 

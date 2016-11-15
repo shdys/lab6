@@ -55,6 +55,7 @@ public class CheckUserRightOrNotAction {
 		RealPassword = down.getUserByEmail(getUserEmail()).getUserPassword();
 		if(RealPassword.equals(getUserPassword()))
 		{
+
 			return Action.SUCCESS;
 		}
 		else
