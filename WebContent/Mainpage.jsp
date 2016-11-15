@@ -89,8 +89,10 @@ String qstr="select * from Student";
 						<li>
 							<i class="fa fa-envelope-o"></i> <%  
 								   String ename = request.getParameter("userEmail");  
-								   out.println(ename);   
+								session.setAttribute("ename",ename);
+								   out.println(ename);  
 								    %>
+
 							<div id='dv'></div>
 						</li>
 				</div>
@@ -172,32 +174,32 @@ String qstr="select * from Student";
 			</div>
 		</div>
 		<div class="row">
-			<form name="forma" id="ff2" method="post" action="Registration">
+			<form name="form2" id="ff2" method="post" action="ActDetail.jsp">
 				<div class="col-md-3 col-sm-6">
 					<div class="single-query">
 						<label for="keyword-input">Activity name</label>
-						<input type="text" id="keyword-input" placeholder="">
+						<input type="text" name="name" "id="name" placeholder="">
 
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="single-query">
 						<label for="keyword-input">Number of people</label>
-						<input type="text" id="keyword-input" placeholder="">
+						<input type="text" name="num" id="num" placeholder="">
 
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="single-query">
 						<label for="keyword-input">Sum</label>
-						<input type="text" id="keyword-input" placeholder="">
+						<input type="text" name ="sum" id="sum" placeholder="">
 
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="single-query">
 						<label>Payment type</label>
-						<select>
+						<select name="type" id="type">
 							<option value="1000 sf">Normal</option>
 							<option value="2000 sf">Girls for free</option>
 							<option value="3000 sf">Leaving early pay more</option>
