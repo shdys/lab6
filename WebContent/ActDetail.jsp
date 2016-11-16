@@ -40,11 +40,11 @@
     out.println(sum);
     String type = request.getParameter("type"); */
     
-    String type="1";
+    String type="4";
     if(type.substring(0,1).equals("1"))
     {
     	type="Normal";
-    	 response.sendRedirect("index.jsp");
+    	 response.sendRedirect("normal.jsp");
     }
     else if(type.substring(0,1).equals("2"))
 	{

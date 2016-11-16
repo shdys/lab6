@@ -18,8 +18,7 @@ import DB.DownloadSQL;
 import java.math.*;
 
 import Model.Activity;
-import Model.Girls;
-import Model.Extra;
+
 
 
 
@@ -31,11 +30,9 @@ public class calculation extends ActionSupport{
     public String ename;
     public double temp;
     public int Female;
-    public double percent;
-    public int leavenumber;
-    public Girls g;
-    public Extra e;
-  
+    public double Percent;
+    public int Leavenumber;
+ 
 		
 	public String getEname() {
 		return ename;
@@ -72,54 +69,41 @@ public class calculation extends ActionSupport{
 		Female = female;
 	}
 
+	
 	public double getPercent() {
-		return percent;
+		return Percent;
 	}
 
 	public void setPercent(double percent) {
-		this.percent = percent;
+		Percent = percent;
 	}
 
 	public int getLeavenumber() {
-		return leavenumber;
+		return Leavenumber;
 	}
 
 	public void setLeavenumber(int leavenumber) {
-		this.leavenumber = leavenumber;
+		Leavenumber = leavenumber;
 	}
 
-	public Girls getG() {
-		return g;
-	}
-
-	public void setG(Girls g) {
-		this.g = g;
-	}
-
-	public Extra getE() {
-		return e;
-	}
-
-	public void setE(Extra e) {
-		this.e = e;
-	}
+	
 
 	
 	public String execute(){
 
 		try{
 			DownloadSQL down = new DownloadSQL();
-			setAct(down.getActivitySandN("1111002034@qq.com"));
-			if ((down.getActivitySandN("1111002034@qq.com").Type).equals("Normal")){
+			setAct(down.getActivitySandN("banjv"));
+			if ((down.getActivitySandN("banjv").Type).equals("Normal")){
 				temp=(Double.parseDouble(act.Sum))/(Integer.parseInt(act.Number));
 			}
-			else if((down.getActivitySandN("1111002034@qq.com").Type).equals("Girls for free")){
+			else if((down.getActivitySandN("banjv").Type).equals("Girls for free")){
 				temp=(Double.parseDouble(act.Sum))/(Integer.parseInt(act.Number)-Female);
 			    girls=0;
 			}
-			else if((down.getActivitySandN("1111002034@qq.com").Type).equals("Leaving Early Pay More")){
-				temp=((Double.parseDouble(act.Sum))/(Integer.parseInt(act.Number)-leavenumber+1+percent*0.01));
-				extra=(1+percent*0.01)*e.average;
+			else if((down.getActivitySandN("banjv").Type).equals("Leaving early pay more")){
+				temp=((Double.parseDouble(act.Sum))/(Leavenumber*Percent*0.01+Integer.parseInt(act.Number)));
+				//extra=(1+percent*0.01)*e.average;
 			}
 		    average=temp;
 			//g.ave=temp;

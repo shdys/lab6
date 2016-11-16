@@ -14,23 +14,23 @@ public class DownloadSQL {
 	static DataBaseConnector connection = new DataBaseConnector();
 
 
-	public Activity getActivitySandN(String Owner){
+	public Activity getActivitySandN(String Act_name){
 		 connection.ConnectDataBase();
 		 PreparedStatement pst = null;
 		 ResultSet rs = null;
-		 String SEARCH_SQL = "SELECT Number,Sum,Type from activity WHERE Owner = ?";
+		 String SEARCH_SQL = "SELECT Number,Sum,Type from activity WHERE Act_name = ?";
 
 		try {
 			Activity acty=new Activity();
 			pst = connection.connect.prepareStatement(SEARCH_SQL);
 
-			pst.setString(1, Owner);
+			pst.setString(1, Act_name);
 
 			rs = pst.executeQuery();
 			
 
 			while (rs.next()) {
-				acty.setUserEmail(Owner);
+				acty.setUserEmail(Act_name);
 				acty.setNumber(rs.getString("Number"));
 				acty.setSum(rs.getString("Sum"));
 				acty.setType(rs.getString("Type"));
