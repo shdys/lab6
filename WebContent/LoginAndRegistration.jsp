@@ -10,6 +10,11 @@
     <meta name="author" content="">
 	
     <title>login and registration</title>
+      <style type="text/css">
+body {
+	background-image: url(images/226989-106.jpg);
+}
+</style>
 	
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap2.min.css"  type="text/css">
@@ -60,7 +65,6 @@
 							<input type="password" class="form-control" placeholder="Password :" name="userPassword" id="email" required>
 						</div>
 						<button type="submit" class="btn btn-1" name="login" id="login">Login</button>
-						<a href="#">Forgot Your Password ?</a>
 					</form>
 					
 				</div>

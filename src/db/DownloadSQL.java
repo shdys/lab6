@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import model.Activity;
 import model.user;
 
 
@@ -47,6 +48,34 @@ public class DownloadSQL {
 	}
 	
 	
-	
+	public Activity getActivitySandN(String Act_name){
+		 connection.ConnectDataBase();
+		 PreparedStatement pst = null;
+		 ResultSet rs = null;
+		 String SEARCH_SQL = "SELECT Number,Sum,Type from activity WHERE Act_name = ?";
+
+		try {
+			Activity acty=new Activity();
+			pst = connection.connect.prepareStatement(SEARCH_SQL);
+
+			pst.setString(1, Act_name);
+
+			rs = pst.executeQuery();
+			
+
+			while (rs.next()) {
+				acty.setUserEmail(Act_name);
+				acty.setNumber(rs.getString("Number"));
+				acty.setSum(rs.getString("Sum"));
+				acty.setType(rs.getString("Type"));
+			}
+			pst.close();
+	        return acty;
+		    } 
+		    catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		    }
+	}
 	
 }

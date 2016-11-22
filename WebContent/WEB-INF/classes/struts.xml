@@ -18,6 +18,14 @@
 			<result name="error">/Error.jsp</result>
 			<result name="PasswordNotEqual">/PasswordNotEqual.jsp</result>
 	</action>
+	
+	<action name="Add" class="Action.calculation" method="execute">
+            <result name="Normal">/normalresult.jsp</result>
+            <result name="Girls for free">/girlsresult.jsp</result>
+            <result name="Leaving early pay more">/leavingresult.jsp</result>
+            <result name="ERROR">/error.jsp</result>
+        </action>
+  
 
 	</package>  
 </struts>  

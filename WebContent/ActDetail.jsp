@@ -42,14 +42,17 @@
     if(type.substring(0,1).equals("1"))
     {
     	type="Normal";
+    	response.sendRedirect("normal.jsp");
     }
     if(type.substring(0,1).equals("2"))
 	{
 		type="Girls for free";
+	    response.sendRedirect("Girls.jsp");
 	}
     if(type.substring(0,1).equals("3"))
 	{
 		type="Leaving early pay more";
+		response.sendRedirect("Leaving.jsp");
 	}
     if(type.substring(0,1).equals("4"))
 	{
@@ -77,6 +80,7 @@
     rs = stat.executeQuery("select * from activity"); }
  
 catch(Exception e){} 
+    
 %>
     
    <center>
@@ -116,6 +120,7 @@ catch(Exception e){}
         conn = null;
     }
     %>     
+    <%  session.setAttribute("actname",name);  %>
       </body>
 </html>
 
