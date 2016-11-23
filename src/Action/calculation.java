@@ -1,5 +1,5 @@
 package Action;
-/*import javax.servlet.http.Cookie;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -10,14 +10,14 @@ import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.Action;
-import com.opensymphony.xwork2.ActionContext;*/
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
-import DB.DownloadSQL;
+import db.DownloadSQL;
 
 import java.math.*;
 
-import Model.Activity;
+import model.Activity;
 
 
 
@@ -27,19 +27,22 @@ import Model.Activity;
 public class calculation extends ActionSupport{
 	public Activity act;
 	public double average,girls,extra;
-    public String ename;
+    public String name;
     public double temp;
     public int Female;
     public double Percent;
     public int Leavenumber;
- 
+
+  
 		
-	public String getEname() {
-		return ename;
+	
+
+	public String getName() {
+		return name;
 	}
 
-	public void setEname(String ename) {
-		this.ename = ename;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public Activity getAct() {
@@ -85,23 +88,22 @@ public class calculation extends ActionSupport{
 	public void setLeavenumber(int leavenumber) {
 		Leavenumber = leavenumber;
 	}
-
-	
-
-	
+	HttpServletRequest request=ServletActionContext.getRequest();
+	HttpSession session= request.getSession();
+	String actname = (String)session.getAttribute("actname");
 	public String execute(){
 
 		try{
 			DownloadSQL down = new DownloadSQL();
-			setAct(down.getActivitySandN("banjv"));
-			if ((down.getActivitySandN("banjv").Type).equals("Normal")){
+			setAct(down.getActivitySandN(actname));
+			if ((down.getActivitySandN(actname).Type).equals("Normal")){
 				temp=(Double.parseDouble(act.Sum))/(Integer.parseInt(act.Number));
 			}
-			else if((down.getActivitySandN("banjv").Type).equals("Girls for free")){
+			else if((down.getActivitySandN(actname).Type).equals("Girls for free")){
 				temp=(Double.parseDouble(act.Sum))/(Integer.parseInt(act.Number)-Female);
 			    girls=0;
 			}
-			else if((down.getActivitySandN("banjv").Type).equals("Leaving early pay more")){
+			else if((down.getActivitySandN(actname).Type).equals("Leaving early pay more")){
 				temp=((Double.parseDouble(act.Sum))/(Leavenumber*Percent*0.01+Integer.parseInt(act.Number)));
 				//extra=(1+percent*0.01)*e.average;
 			}

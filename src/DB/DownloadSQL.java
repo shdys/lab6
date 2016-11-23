@@ -1,19 +1,53 @@
-package DB;
+package db;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import Model.Activity;
 
-//import model.Author;
-//import model.Book;
+import model.Activity;
+import model.user;
+
 
 
 public class DownloadSQL {
 	static DataBaseConnector connection = new DataBaseConnector();
-
-
+	
+	
+	public user getUserByEmail(String userEmail)
+	{
+		connection.ConnectDataBase();
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		String SEARCH_SQL = "SELECT userEmail,userPassword,userName,userSex FROM user  WHERE userEmail = ?";
+		try{
+			user resultuser = new user();
+			
+			resultuser.setUserEmail("yhb1209081670@outlook.com");
+			resultuser.setUserName("NicholasDraven");
+			resultuser.setUserPassword("k780si7d3");
+			resultuser.setUserSex("man");
+			
+			
+			pst = connection.connect.prepareStatement(SEARCH_SQL);
+			pst.setString(1, userEmail);
+			rs = pst.executeQuery();
+			while(rs.next()){
+				resultuser.setUserEmail(rs.getString("userEmail"));
+				resultuser.setUserName(rs.getString("userName"));
+				resultuser.setUserPassword(rs.getString("userPassword"));
+				resultuser.setUserSex(rs.getString("userSex"));
+			}
+			pst.close();
+			return resultuser;
+		}
+		catch (SQLException e){
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	
 	public Activity getActivitySandN(String Act_name){
 		 connection.ConnectDataBase();
 		 PreparedStatement pst = null;
@@ -43,137 +77,5 @@ public class DownloadSQL {
 			return null;
 		    }
 	}
-	
-	
-	
-/*	public Author getAuthorByID(int AuthorID){
-		 connection.ConnectDataBase();
-		 PreparedStatement pst = null;
-		 ResultSet rs = null;
-		 String SEARCH_SQL = "SELECT Country,Age,Name FROM author  WHERE AuthorID = ?";
-
-		try {
-			Author au = new Author();
-			pst = connection.connect.prepareStatement(SEARCH_SQL);
-
-			pst.setLong(1, AuthorID);
-
-			rs = pst.executeQuery();
-
-			while (rs.next()) {
-				
-				au.setAuthorID(AuthorID);
-				au.setAge(rs.getString("Age"));
-				au.setCountry(rs.getString("Country"));
-				au.setName(rs.getString("Name"));
-				
-			}
-			pst.close();
-			return au;
-		    } 
-		    catch (SQLException e) {
-			e.printStackTrace();
-			return null;
-		    }
-	}
-	
-	
-	public Author getAuthorByName(String name){
-
-		connection.ConnectDataBase();
-		 PreparedStatement pst = null;
-		 ResultSet rs = null;
-		 String SEARCH_SQL = "SELECT Country,Age,AuthorID FROM author  WHERE Name = ?";
-
-		try {
-			Author au = new Author();
-			pst = connection.connect.prepareStatement(SEARCH_SQL);
-
-			pst.setString(1, name);
-
-			rs = pst.executeQuery();
-
-			while (rs.next()) {
-				
-				au.setAuthorID(rs.getInt("AuthorID"));
-				au.setAge(rs.getString("Age"));
-				au.setCountry(rs.getString("Country"));
-				au.setName(name);
-				
-			}
-			pst.close();
-			return au;
-		    } 
-		    catch (SQLException e) {
-			e.printStackTrace();
-			return null;
-		    }
-	}
-	
-	
-	public Book getBookByISBN(String ISBN){
-		 connection.ConnectDataBase();
-		 PreparedStatement pst = null;
-		 ResultSet rs = null;
-		 String SEARCH_SQL = "SELECT Price,PublishDate,Publisher,AuthorID,Title  FROM book WHERE ISBN=?";
-
-		try {
-			Book com  = new Book();
-			pst = connection.connect.prepareStatement(SEARCH_SQL);
-			pst.setString(1, ISBN);
-			rs = pst.executeQuery();
-			while (rs.next()) {
-				com.setISBN(ISBN);
-				com.setPrice(rs.getString("Price"));
-				com.setPublishDate(rs.getString("PublishDate"));
-				com.setPublisher(rs.getString("Publisher"));
-				com.setAuthorID(rs.getInt("AuthorID"));
-				com.setTitle(rs.getString("Title"));
-			}
-			pst.close();	
-			return com;
-		    } 
-		    catch (SQLException e) {
-			e.printStackTrace();
-			return null;
-		    }
-	}
-	
-	
-	
-	public ArrayList<Book> getBooksByAuthor(int AuthorID) {
-		 connection.ConnectDataBase();
-		 PreparedStatement pst = null;
-		 ResultSet rs = null;
-		 String SEARCH_SQL = "SELECT Price,PublishDate,Publisher,Title,ISBN FROM book WHERE AuthorID = ?";
-
-		try {
-			ArrayList<Book> booklist = new ArrayList<Book>();
-			pst = connection.connect.prepareStatement(SEARCH_SQL);
-			pst.setLong(1, AuthorID);
-			rs = pst.executeQuery();
-			while (rs.next()) {
-				Book com  = new Book();
-				com.setISBN(rs.getString("ISBN"));
-				com.setPrice(rs.getString("Price"));
-				com.setPublishDate(rs.getString("PublishDate"));
-				com.setPublisher(rs.getString("Publisher"));
-				com.setTitle(rs.getString("Title"));
-				com.setAuthorID(AuthorID);
-				com.setAuthorName(getAuthorByID(AuthorID).getName());
-				booklist.add(com);
-			}
-			pst.close();	
-			return booklist;
-		    } 
-		    catch (SQLException e) {
-			e.printStackTrace();
-			return null;
-		    }
-	}
-	
-
-	
-	*/
 	
 }

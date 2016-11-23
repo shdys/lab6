@@ -1,4 +1,4 @@
-package DB;
+package db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DataBaseConnector {
-	static String url = "jdbc:mysql://localhost:3306/activity?characterEncoding=utf-8";
+	static String url = "jdbc:mysql://localhost:3306/activity";
 	static String user = "root";
 	static String password = "199514";
 

@@ -28,7 +28,7 @@
     <body>
     <% 
  
-   /* request.setCharacterEncoding("gbk");
+    request.setCharacterEncoding("gbk");
     Object ename= session.getAttribute("ename");
     ename = (String)ename;
     out.println(ename);
@@ -38,18 +38,16 @@
     out.println(num);
     String sum = request.getParameter("sum");
     out.println(sum);
-    String type = request.getParameter("type"); */
-    
-    String type="4";
+    String type = request.getParameter("type");
     if(type.substring(0,1).equals("1"))
     {
     	type="Normal";
-    	 response.sendRedirect("normal.jsp");
+    	response.sendRedirect("normal.jsp");
     }
-    else if(type.substring(0,1).equals("2"))
+    if(type.substring(0,1).equals("2"))
 	{
 		type="Girls for free";
-		 response.sendRedirect("Girls.jsp");
+	    response.sendRedirect("Girls.jsp");
 	}
     if(type.substring(0,1).equals("3"))
 	{
@@ -62,31 +60,34 @@
 	}
     out.println(type);
 
-    %>
     
     
-   <!--  System.out.println(name);
+    
+    System.out.println(name);
     Connection conn = null; 
     Statement stat = null; 
     ResultSet rs = null;
     Class.forName("com.mysql.jdbc.Driver"); 
-    String url = "jdbc:mysql://localhost:3306/activity?characterEncoding=utf-8"; 
+    String url = "jdbc:mysql://localhost:3306/draven"; 
     String user = "root"; 
-    String password = "199514";
+    String password = "4217";
     try{
  
 	conn = DriverManager.getConnection(url, user, password);
     stat = conn.createStatement(); 
-    //String sql = "insert into activity(Owner,Act_name,Number,Sum,Type) values('" + ename + "','" + name + "','" + num + "','" + sum + "','" + type  + "')";
-    //stat.executeUpdate(sql); 
+    String IsVoteVary = "No";
+    String IsCreaterVary = "Yes";
+    String sql = "insert into activity(Owner,Act_name,Number,Sum,Type,IsVote,IsCreater) values('" + ename + "','" + name + "','" + num + "','" + sum + "','" + type+ "','"+ IsVoteVary+ "','" + IsCreaterVary+ "')";
+    stat.executeUpdate(sql); 
     rs = stat.executeQuery("select * from activity"); }
  
 catch(Exception e){} 
- -->
+    
+%>
     
    <center>
- 
-   <%--  try{
+   <%
+    try{
      
      
     if(rs.next())
@@ -119,7 +120,9 @@ catch(Exception e){}
     {
         conn.close();
         conn = null;
-    } --%>
+    }
+    %>     
+    <%  session.setAttribute("actname",name);  %>
       </body>
 </html>
 

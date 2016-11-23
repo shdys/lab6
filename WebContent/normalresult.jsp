@@ -3,17 +3,17 @@
 <html>
 <head>
 <title>Result of Leaving</title> 
-<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="css/style3.css" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Pricing Tables Design ,Flat Pricing Tables Design ,Popup Pricing Tables Design,Clean Pricing Tables Design "./>
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 </script>
-<script src="http://ajax.useso.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<%-- <script src="http://ajax.useso.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <!--webfonts-->
 <link href='http://fonts.useso.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
-<!--//webfonts-->
+<!--//webfonts--> --%>
 </head>
 <body>
 <!--start-pricing-tablel-->
@@ -36,7 +36,12 @@
 																						
 						});
 				</script>							
-
+	<% 
+	Object ename= session.getAttribute("ename");
+    ename = (String)ename;
+    out.println(ename);
+    String actname= (String)session.getAttribute("actname");
+    %>
  <div class="pricing-plans">
 					 <div class="wrap">
 					 	<div class="price-head">
@@ -56,8 +61,8 @@
 							<ul>
 							
 								<li class="whyt"><a href="#" >people:<s:property value="act.Number"/></a></li>
-								<li>total money:<a href="#">¥<s:property value="act.Sum"/></a></li>
-								<li class="whyt">average payment for everyone:<a href="#">¥<s:property value="average"/></a></li>
+								<li>total money:<a href="#">?s:property value="act.Sum"/></a></li>
+								<li class="whyt">average payment for everyone:<a href="#">?s:property value="average"/></a></li>
 								
 								
 							</ul>
