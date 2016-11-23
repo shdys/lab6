@@ -24,8 +24,12 @@
             <result name="Girls for free">/girlsresult.jsp</result>
             <result name="Leaving early pay more">/leavingresult.jsp</result>
             <result name="ERROR">/error.jsp</result>
-        </action>
+    </action>
   
+    <action name="CreatVoteActivityName" class="Action.CreatVoteActivityNameAction" method="execute">
+			<result name="success">/CreatVoteSuccess.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
 
 	</package>  
 </struts>  

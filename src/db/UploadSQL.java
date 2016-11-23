@@ -37,4 +37,28 @@ public class UploadSQL {
 		return flag;
 	}
 	
+	
+	public boolean creatNewVoteActivityName(String UserEmail,String getVoteActivityName){
+		connection.ConnectDataBase();
+		PreparedStatement pst2 = null;
+		String INSERT_SQL2 = "INSERT INTO activity(Owner,Act_name,IsVote,IsCreater) VALUES(?,?,?,?)";
+		boolean flag2 = false;
+		try {
+			pst2 = connection.connect.prepareStatement(INSERT_SQL2);
+			pst2.setString(1, UserEmail);
+			pst2.setString(2, getVoteActivityName);
+			pst2.setString(3, "Yes");
+			pst2.setString(4, "Yes");
+			int vary2 = pst2.executeUpdate();
+			if(vary2 == 1){
+				flag2 = true;
+			}
+			pst2.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return flag2;
+	}
+	
+	
 }

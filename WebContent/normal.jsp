@@ -29,6 +29,7 @@ body {
 	</style>
 </head>
 <body>
+<li><a href="Mainpage.jsp" class="current">Return to the main page.</a></li>
 	<% 
 	String actname =(String)session.getAttribute("actname");
 	session.setAttribute("actname",actname);

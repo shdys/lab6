@@ -75,7 +75,9 @@
  
 	conn = DriverManager.getConnection(url, user, password);
     stat = conn.createStatement(); 
-    String sql = "insert into activity(Owner,Act_name,Number,Sum,Type) values('" + ename + "','" + name + "','" + num + "','" + sum + "','" + type  + "')";
+    String IsVoteVary = "No";
+    String IsCreaterVary = "Yes";
+    String sql = "insert into activity(Owner,Act_name,Number,Sum,Type,IsVote,IsCreater) values('" + ename + "','" + name + "','" + num + "','" + sum + "','" + type+ "','"+ IsVoteVary+ "','" + IsCreaterVary+ "')";
     stat.executeUpdate(sql); 
     rs = stat.executeQuery("select * from activity"); }
  
