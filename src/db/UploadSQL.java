@@ -61,4 +61,24 @@ public class UploadSQL {
 	}
 	
 	
+	public boolean ceratVoteActivityTable(String UserEmail,String getVoteActivityName)
+	{
+		connection.ConnectDataBase();
+		PreparedStatement pst3 = null;
+		String INSERT_SQL3 = "create table "+getVoteActivityName+" (userEmail VARCHAR(255),userSex VARCHAR(255),leaveEarly VARCHAR(255),payMorePercentage VARCHAR(255),moneyShouldPay VARCHAR(255),Sum VARCHAR(255),Type VARCHAR(255),PRIMARY KEY ( userEmail ));";
+		boolean flag3 = false;
+		try {
+			pst3 = connection.connect.prepareStatement(INSERT_SQL3);
+			int vary3 = pst3.executeUpdate();
+			if(vary3 == 1){
+				flag3 = true;
+			}
+			pst3.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return flag3;
+	}
+	
+	
 }

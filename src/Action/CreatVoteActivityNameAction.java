@@ -40,7 +40,9 @@ public class CreatVoteActivityNameAction {
 		try {
 			UploadSQL up = new UploadSQL();
 			boolean CreatVoteActivityNameFlag =  up.creatNewVoteActivityName(getUserEmail(),getVoteActivityName());
-			boolean CreatVoteActivityTable = up.ceratVoteActivityTable(getUserEmail(),getVoteActivityName());
+			//boolean CreatVoteActivityTableFlag = up.ceratVoteActivityTable(getUserEmail(),getVoteActivityName());
+			up.ceratVoteActivityTable(getUserEmail(),getVoteActivityName());
+			//if(CreatVoteActivityNameFlag && CreatVoteActivityTableFlag)
 			if(CreatVoteActivityNameFlag)
 			{
 				return Action.SUCCESS;
