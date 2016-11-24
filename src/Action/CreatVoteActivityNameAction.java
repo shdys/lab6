@@ -12,7 +12,7 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import db.UploadSQL;
 import db.DownloadSQL;
-
+import model.user;
 
 public class CreatVoteActivityNameAction {
 	private String userEmail = null;
@@ -38,10 +38,14 @@ public class CreatVoteActivityNameAction {
 
 	public String execute(){
 		try {
-			UploadSQL up = new UploadSQL();
-			boolean CreatVoteActivityNameFlag =  up.creatNewVoteActivityName(getUserEmail(),getVoteActivityName());
+			UploadSQL up1 = new UploadSQL();
+			DownloadSQL down1 = new DownloadSQL();
+			boolean CreatVoteActivityNameFlag =  up1.creatNewVoteActivityName(getUserEmail(),getVoteActivityName());
 			//boolean CreatVoteActivityTableFlag = up.ceratVoteActivityTable(getUserEmail(),getVoteActivityName());
-			up.ceratVoteActivityTable(getUserEmail(),getVoteActivityName());
+			up1.ceratVoteActivityTable(getUserEmail(),getVoteActivityName());
+			
+			
+			up1.ceratVoteActivityTableInit(down1.getUserByEmail(getUserEmail()),getVoteActivityName());
 			//if(CreatVoteActivityNameFlag && CreatVoteActivityTableFlag)
 			if(CreatVoteActivityNameFlag)
 			{
