@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Error</title>
+<title>DravenTest1</title>
       <style type="text/css">
 body {
 	background-image: url(images/340362-106.jpg);
