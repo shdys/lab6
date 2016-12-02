@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import model.Activity;
+import model.Participant;
 import model.user;
 
 
@@ -71,6 +72,37 @@ public class DownloadSQL {
 			}
 			pst.close();
 	        return acty;
+		    } 
+		    catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		    }
+	}
+	
+	
+	public ArrayList<Participant> getAllParticipant()
+	{
+		connection.ConnectDataBase();
+		PreparedStatement pst3 = null;
+		ResultSet rs3 = null;
+		String SEARCH_SQL3 = "SELECT userName,userEmail,userSex,IsCreater  FROM act18";
+
+		try {
+			ArrayList<Participant> Participantlist = new ArrayList<Participant>();
+			pst3 = connection.connect.prepareStatement(SEARCH_SQL3);
+			rs3 = pst3.executeQuery();
+			while (rs3.next()) {
+				Participant com  = new Participant();
+				
+				com.setUserName(rs3.getString("userName"));
+				com.setUserEmail(rs3.getString("userEmail"));
+				com.setUserSex(rs3.getString("userSex"));
+				com.setIsCreater(rs3.getString("IsCreater"));
+				
+				Participantlist.add(com);
+			}
+			pst3.close();	
+			return Participantlist;
 		    } 
 		    catch (SQLException e) {
 			e.printStackTrace();
