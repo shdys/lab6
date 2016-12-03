@@ -109,5 +109,56 @@ public class UploadSQL {
 		return flag4;
 	}
 	
+
 	
+	
+	public boolean addThisUserToParticipants(user uservary)
+	{
+		connection.ConnectDataBase();
+		PreparedStatement pst5 = null;
+		String INSERT_SQL5 = "INSERT INTO  act18(userName,userEmail,userSex,IsCreater) VALUES(?,?,?,?)";
+		boolean flag5 = false;
+		try {
+			pst5 = connection.connect.prepareStatement(INSERT_SQL5);
+			pst5.setString(1, uservary.userName);
+			pst5.setString(2, uservary.userEmail);
+			pst5.setString(3, uservary.userSex);
+			pst5.setString(4, "No");
+			int vary5 = pst5.executeUpdate();
+			if(vary5 == 1){
+				flag5 = true;
+			}
+			pst5.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return flag5;
+	}
+	
+	
+	
+	
+	
+	public boolean addParticipantToVoteActivity(String UserEmail)
+	{
+		connection.ConnectDataBase();
+		PreparedStatement pst6 = null;
+		String INSERT_SQL6 = "INSERT INTO activity(Owner,Act_name,IsVote,IsCreater) VALUES(?,?,?,?)";
+		boolean flag6 = false;
+		try {
+			pst6 = connection.connect.prepareStatement(INSERT_SQL6);
+			pst6.setString(1, UserEmail);
+			pst6.setString(2, "act18");
+			pst6.setString(3, "Yes");
+			pst6.setString(4, "No");
+			int vary6 = pst6.executeUpdate();
+			if(vary6 == 1){
+				flag6 = true;
+			}
+			pst6.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return flag6;
+	}
 }

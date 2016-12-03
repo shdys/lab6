@@ -110,4 +110,34 @@ public class DownloadSQL {
 		    }
 	}
 	
+	
+	
+	public ArrayList<user> getUsersByName(String userName){
+		connection.ConnectDataBase();
+		PreparedStatement pst4 = null;
+		ResultSet rs4 = null;
+		String SEARCH_SQL4 = "SELECT userEmail,userName,userSex FROM user WHERE userName = ?";
+
+		try {
+			ArrayList<user> userlist4 = new ArrayList<user>();
+			pst4 = connection.connect.prepareStatement(SEARCH_SQL4);
+			pst4.setString(1, userName);
+			rs4 = pst4.executeQuery();
+			while (rs4.next()) {
+				user com4  = new user();
+				
+				com4.setUserEmail(rs4.getString("userEmail"));
+				com4.setUserName(rs4.getString("userName"));
+				com4.setUserSex(rs4.getString("userSex"));
+				userlist4.add(com4);
+			}
+			pst4.close();	
+			return userlist4;
+		    } 
+		    catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		    }
+	}
+	
 }

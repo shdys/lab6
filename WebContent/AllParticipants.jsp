@@ -32,6 +32,15 @@ body {
     <td><s:property value="#Participant.IsCreater"/></td>
   </tr>
   </s:iterator>
+  
+  <tr>
+  <form name="form1" id="ff1" method="post" action="SearchUsersByName">
+    <th scope="col"><input type="text" class="form-control" placeholder="User Name :" name="userName" id="userName" required></th>
+    <th scope="col">&nbsp;</th>
+    <th scope="col">&nbsp;</th>
+    <th scope="col"><button type="submit" class="btn btn-1" name="Search" id="Search">Search</button></th>
+  </form>
+  </tr>
 
 </table>
 
