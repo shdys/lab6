@@ -12,15 +12,15 @@
     <title>login and registration</title>
 	
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css"  type="text/css">
+    <link rel="stylesheet" href="css/bootstrap2.min.css"  type="text/css">
 	
 	<!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style2.css">
 	
 	
 	<!-- Custom Fonts -->
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"  type="text/css">
-    <link rel="stylesheet" href="fonts/font-slider.css" type="text/css">
+    <link rel="stylesheet" href="fonts/font-slider2.css" type="text/css">
 	
 	<!-- jQuery and Modernizr-->
 	<script src="js/jquery-2.1.1.js"></script>

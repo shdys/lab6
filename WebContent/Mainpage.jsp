@@ -75,7 +75,7 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 <%! String url = "jdbc:mysql://localhost:3306/aa_dutch";
-String qstr="select * from Student";
+String qstr="select * from activity";
 %>
 </head>
 <body>
