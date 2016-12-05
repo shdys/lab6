@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Result of Leaving</title> 
+<title>Result of Normal</title> 
 <link href="css/style3.css" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -61,8 +61,8 @@
 							<ul>
 							
 								<li class="whyt"><a href="#" >people:<s:property value="act.Number"/></a></li>
-								<li>total money:<a href="#">?s:property value="act.Sum"/></a></li>
-								<li class="whyt">average payment for everyone:<a href="#">?s:property value="average"/></a></li>
+								<li>total money:<a href="#"><s:property value="act.Sum"/></a></li>
+								<li class="whyt">average payment for everyone:<a href="#"><s:property value="average"/></a></li>
 								
 								
 							</ul>
