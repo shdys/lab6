@@ -17,9 +17,18 @@ import model.user;
 public class CreatVoteActivityNameAction {
 	private String userEmail = null;
 	private String voteActivityName = null;
+	private String BeforeOrAfter = null;
 	
 	
 	
+	public String getBeforeOrAfter() {
+		return BeforeOrAfter;
+	}
+
+	public void setBeforeOrAfter(String beforeOrAfter) {
+		this.BeforeOrAfter = beforeOrAfter;
+	}
+
 	public String getUserEmail() {
 		return userEmail;
 	}
@@ -40,7 +49,7 @@ public class CreatVoteActivityNameAction {
 		try {
 			UploadSQL up1 = new UploadSQL();
 			DownloadSQL down1 = new DownloadSQL();
-			boolean CreatVoteActivityNameFlag =  up1.creatNewVoteActivityName(getUserEmail(),getVoteActivityName());
+			boolean CreatVoteActivityNameFlag =  up1.creatNewVoteActivityName(getUserEmail(),getVoteActivityName(),getBeforeOrAfter());
 			//boolean CreatVoteActivityTableFlag = up.ceratVoteActivityTable(getUserEmail(),getVoteActivityName());
 			up1.ceratVoteActivityTable(getUserEmail(),getVoteActivityName());
 			

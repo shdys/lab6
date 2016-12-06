@@ -38,10 +38,10 @@ public class UploadSQL {
 	}
 	
 	
-	public boolean creatNewVoteActivityName(String UserEmail,String getVoteActivityName){
+	public boolean creatNewVoteActivityName(String UserEmail,String getVoteActivityName,String getBeforeOrAfter){
 		connection.ConnectDataBase();
 		PreparedStatement pst2 = null;
-		String INSERT_SQL2 = "INSERT INTO activity(Owner,Act_name,IsVote,IsCreater) VALUES(?,?,?,?)";
+		String INSERT_SQL2 = "INSERT INTO activity(Owner,Act_name,IsVote,IsCreater,BeforeOrAfter) VALUES(?,?,?,?,?)";
 		boolean flag2 = false;
 		try {
 			pst2 = connection.connect.prepareStatement(INSERT_SQL2);
@@ -49,6 +49,7 @@ public class UploadSQL {
 			pst2.setString(2, getVoteActivityName);
 			pst2.setString(3, "Yes");
 			pst2.setString(4, "Yes");
+			pst2.setString(5, getBeforeOrAfter);
 			int vary2 = pst2.executeUpdate();
 			if(vary2 == 1){
 				flag2 = true;
@@ -68,7 +69,7 @@ public class UploadSQL {
 	{
 		connection.ConnectDataBase();
 		PreparedStatement pst3 = null;
-		String INSERT_SQL3 = "create table "+getVoteActivityName+" (userName VARCHAR(255),userEmail VARCHAR(255),userSex VARCHAR(255),leaveEarly VARCHAR(255),payMorePercentage VARCHAR(255),moneyShouldPay VARCHAR(255),Sum VARCHAR(255),Type VARCHAR(255),IsCreater VARCHAR(255),PRIMARY KEY ( userEmail ));";
+		String INSERT_SQL3 = "create table "+getVoteActivityName+" (userName VARCHAR(255),userEmail VARCHAR(255),userSex VARCHAR(255),leaveEarly VARCHAR(255),payMorePercentage VARCHAR(255),moneyShouldPay VARCHAR(255),Sum VARCHAR(255),Type VARCHAR(255),IsCreater VARCHAR(255),VoteResult VARCHAR(255),PRIMARY KEY ( userEmail ));";
 		boolean flag3 = false;
 		try {
 			pst3 = connection.connect.prepareStatement(INSERT_SQL3);
@@ -160,5 +161,29 @@ public class UploadSQL {
 			e.printStackTrace();
 		}
 		return flag6;
+	}
+	
+	
+	
+	
+	public boolean inputVoteResult(String UserEmail,String VoteActivityName,String Type)
+	{
+		connection.ConnectDataBase();
+		PreparedStatement pst7 = null;
+		String INSERT_SQL7 = "update "+VoteActivityName+" set VoteResult = ? where userEmail = ?";
+		boolean flag7 = false;
+		try {
+			pst7 = connection.connect.prepareStatement(INSERT_SQL7);
+			pst7.setString(1, Type);
+			pst7.setString(2, UserEmail);
+			int vary7 = pst7.executeUpdate();
+			if(vary7 == 1){
+				flag7 = true;
+			}
+			pst7.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return flag7;
 	}
 }

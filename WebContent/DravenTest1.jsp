@@ -19,7 +19,11 @@ body {
 <form name="form1" id="ff1" method="post" action="CreatVoteActivityName">
 <input type="text" class="form-control" placeholder="Email Address :" name="userEmail" id="userEmail" required>
 <input type="text" class="form-control" placeholder="Vote Activity Name :" name="voteActivityName" id="voteActivityName" required>
-<button type="submit" class="btn btn-1" name="Creat" id="Creat">Creat</button>
+<select name="BeforeOrAfter" id="BeforeOrAfter">
+							<option value="Before">Before</option>
+							<option value="After">After</option>
+</select>
+<button type="submit" class="btn btn-1" name="Creat" id="Creat">Create</button>
 </form>
 
 

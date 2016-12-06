@@ -46,6 +46,24 @@ body {
 
 
 
+
+
+
+<h3>Please input your choice here:</h3>
+
+<form name="form2" id="ff2" method="post" action="CreatVoteActAndVote">
+	
+	<input type="text" class="form-control" placeholder="User Email" name="userEmail" id="userEmail" required>
+	<input type="text" class="form-control" placeholder="Vote Activity Name" name="voteActivityName" id="voteActivityName" required>
+	
+    <select name="type" id="type">
+							<option value="Normal">Normal</option>
+							<option value="Girls">Girls for free</option>
+							<option value="Leave">Leaving early pay more</option>
+	</select>
+	<button type="submit" class="btn btn-3" name="CreatVoteAndVoteButton">Create</button>
+</form>
+
 </center>
 </body>
 </html>

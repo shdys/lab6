@@ -45,6 +45,11 @@
 			<result name="success">/CreatVoteSuccess.jsp</result>
 			<result name="error">/Error.jsp</result>
 	</action>
+	
+	<action name="CreatVoteActAndVote" class="Action.CreatVoteActAndVoteAction" method="execute">
+			<result name="success">/CreateVoteAndVoteSuccess.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
 
 	</package>  
 </struts>  

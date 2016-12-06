@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Result of Leaving</title> 
+<title>Result of GirlsFree</title> 
 <link href="css/style3.css" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -63,7 +63,7 @@
 								<li class="whyt"><a href="#" >people:<s:property value="act.Number"/></a></li>
 								<li>total money:<a href="#">¥<s:property value="act.Sum"/></a></li>
 								<li class="whyt">average payment for men:<a href="#">¥<s:property value="average"/></a></li>
-								<li>payment for female:<a href="#">¥<s:property value="average*(1+Percent*0.01)"/></a></li>
+								<li>payment for female:<a href="#">¥<s:property value="0"/></a></li>
 								
 							</ul>
 							
