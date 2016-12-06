@@ -73,8 +73,7 @@ border-color: #a9c6c9;
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
-<%! String url = "jdbc:mysql://localhost:3306/aa_dutch";
+String url = "jdbc:mysql://localhost:3306/aa_dutch";
 String qstr="select * from activity";
 %>
 </head>
