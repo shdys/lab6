@@ -97,35 +97,7 @@ session.setAttribute("ename",ename);
                       <li > <a href="Vote-l.jsp" > <i class="fa fa-angle-right"></i> <span>Leaving-early-more</span> </a> </li>
                     </ul>
                   </li>
-                  <li > <a href="#uikit" > <i class="fa fa-flask icon"> <b class="bg-primary"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>UI kit</span> </a>
-                    <ul class="nav lt">
-                      <li > <a href="buttons.jsp" > <i class="fa fa-angle-right"></i> <span>Buttons</span> </a> </li>
-                      <li > <a href="icons.jsp" > <b class="badge bg-info pull-right">369</b> <i class="fa fa-angle-right"></i> <span>Icons</span> </a> </li>
-                      <li > <a href="grid.jsp" > <i class="fa fa-angle-right"></i> <span>Grid</span> </a> </li>
-                      <li > <a href="widgets.jsp" > <b class="badge pull-right">8</b> <i class="fa fa-angle-right"></i> <span>Widgets</span> </a> </li>
-                      <li > <a href="components.jsp" > <i class="fa fa-angle-right"></i> <span>Components</span> </a> </li>
-                      <li > <a href="list.jsp" > <i class="fa fa-angle-right"></i> <span>List group</span> </a> </li>
-                      <li > <a href="#table" > <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> <span>Table</span> </a>
-                        <ul class="nav bg">
-                          <li > <a href="table-static.jsp" > <i class="fa fa-angle-right"></i> <span>Table static</span> </a> </li>
-                          <li > <a href="table-datatable.jsp" > <i class="fa fa-angle-right"></i> <span>Datatable</span> </a> </li>
-                          <li > <a href="table-datagrid.jsp" > <i class="fa fa-angle-right"></i> <span>Datagrid</span> </a> </li>
-                        </ul>
-                      </li>
-                      <li > <a href="#form" > <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> <span>Form</span> </a>
-                        <ul class="nav bg">
-                          <li > <a href="form-elements.jsp" > <i class="fa fa-angle-right"></i> <span>Form elements</span> </a> </li>
-                          <li > <a href="form-validation.jsp" > <i class="fa fa-angle-right"></i> <span>Form validation</span> </a> </li>
-                          <li > <a href="form-wizard.jsp" > <i class="fa fa-angle-right"></i> <span>Form wizard</span> </a> </li>
-                        </ul>
-                      </li>
-                      <li > <a href="chart.jsp" > <i class="fa fa-angle-right"></i> <span>Chart</span> </a> </li>
-                      <li > <a href="fullcalendar.jsp" > <i class="fa fa-angle-right"></i> <span>Fullcalendar</span> </a> </li>
-                      <li > <a href="portlet.jsp" > <i class="fa fa-angle-right"></i> <span>Portlet</span> </a> </li>
-                      <li > <a href="timeline.jsp" > <i class="fa fa-angle-right"></i> <span>Timeline</span> </a> </li>
-                    </ul>
-                  </li>
-                  <li > <a href="#pages" > <i class="fa fa-file-text icon"> <b class="bg-primary dker"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>Pages</span> </a>
+                  <li > <a href="#pages" > <i class="fa fa-file-text icon"> <b class="bg-primary dker"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>Non-vote-after</span> </a>
                     <ul class="nav lt">
                       <li > <a href="gallery.jsp" > <i class="fa fa-angle-right"></i> <span>Gallery</span> </a> </li>
                       <li > <a href="profile.jsp" > <i class="fa fa-angle-right"></i> <span>Profile</span> </a> </li>
@@ -138,7 +110,7 @@ session.setAttribute("ename",ename);
                       <li > <a href="404.jsp" > <i class="fa fa-angle-right"></i> <span>404</span> </a> </li>
                     </ul>
                   </li>
-                  <li > <a href="notebook.jsp" > <i class="fa fa-pencil icon"> <b class="bg-info"></b> </i> <span>After-Activity</span> </a> </li>
+                  <li > <a href="Voteafter.jsp" > <i class="fa fa-pencil icon"> <b class="bg-info"></b> </i> <span>Vote-after</span> </a> </li>
                 </ul>
               </nav>
               <!-- / nav --> </div>

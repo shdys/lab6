@@ -1,4 +1,4 @@
-﻿<div class="modal-over">
+<div class="modal-over">
   <div class="modal-center animated fadeInUp text-center" style="width:200px;margin:-80px 0 0 -100px;">
     <div class="thumb-md"><img src="images/avatar.jpg" class="img-circle b-a b-light b-3x"></div>
     <p class="text-white h4 m-t m-b">John.Smith</p>
