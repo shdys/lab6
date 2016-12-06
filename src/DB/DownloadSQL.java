@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import model.Activity;
+import model.Participant;
 import model.user;
 
 
@@ -48,6 +49,38 @@ public class DownloadSQL {
 	}
 	
 	
+	public Activity getActivity(String Act_name){
+		 connection.ConnectDataBase();
+		 PreparedStatement pst = null;
+		 ResultSet rs = null;
+		 String SEARCH_SQL = "SELECT Number,Sum,Type from activity WHERE Act_name = ?";
+
+		try {
+			Activity acty=new Activity();
+			pst = connection.connect.prepareStatement(SEARCH_SQL);
+
+			pst.setString(1, Act_name);
+
+			rs = pst.executeQuery();
+			
+
+			while (rs.next()) {
+				acty.setUserEmail(Act_name);
+				acty.setNumber(rs.getString("Number"));
+				acty.setSum(rs.getString("Sum"));
+				acty.setType(rs.getString("Type"));
+			}
+			pst.close();
+	        return acty;
+		    } 
+		    catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		    }
+	}
+	
+	
+	
 	public Activity getActivitySandN(String Act_name){
 		 connection.ConnectDataBase();
 		 PreparedStatement pst = null;
@@ -71,6 +104,72 @@ public class DownloadSQL {
 			}
 			pst.close();
 	        return acty;
+		    } 
+		    catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		    }
+	}
+	
+	
+	
+	
+	
+	
+	
+	public ArrayList<Participant> getAllParticipant()
+	{
+		connection.ConnectDataBase();
+		PreparedStatement pst3 = null;
+		ResultSet rs3 = null;
+		String SEARCH_SQL3 = "SELECT userName,userEmail,userSex,IsCreater  FROM act18";
+
+		try {
+			ArrayList<Participant> Participantlist = new ArrayList<Participant>();
+			pst3 = connection.connect.prepareStatement(SEARCH_SQL3);
+			rs3 = pst3.executeQuery();
+			while (rs3.next()) {
+				Participant com  = new Participant();
+				
+				com.setUserName(rs3.getString("userName"));
+				com.setUserEmail(rs3.getString("userEmail"));
+				com.setUserSex(rs3.getString("userSex"));
+				com.setIsCreater(rs3.getString("IsCreater"));
+				
+				Participantlist.add(com);
+			}
+			pst3.close();	
+			return Participantlist;
+		    } 
+		    catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		    }
+	}
+	
+	
+	
+	public ArrayList<user> getUsersByName(String userName){
+		connection.ConnectDataBase();
+		PreparedStatement pst4 = null;
+		ResultSet rs4 = null;
+		String SEARCH_SQL4 = "SELECT userEmail,userName,userSex FROM user WHERE userName = ?";
+
+		try {
+			ArrayList<user> userlist4 = new ArrayList<user>();
+			pst4 = connection.connect.prepareStatement(SEARCH_SQL4);
+			pst4.setString(1, userName);
+			rs4 = pst4.executeQuery();
+			while (rs4.next()) {
+				user com4  = new user();
+				
+				com4.setUserEmail(rs4.getString("userEmail"));
+				com4.setUserName(rs4.getString("userName"));
+				com4.setUserSex(rs4.getString("userSex"));
+				userlist4.add(com4);
+			}
+			pst4.close();	
+			return userlist4;
 		    } 
 		    catch (SQLException e) {
 			e.printStackTrace();

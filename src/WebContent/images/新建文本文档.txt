@@ -1,5 +1,0 @@
-  <style type="text/css">
-body {
-	background-image: url(images/226989-106.jpg);
-}
-</style>

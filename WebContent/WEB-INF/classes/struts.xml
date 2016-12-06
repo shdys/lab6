@@ -31,6 +31,21 @@
 			<result name="error">/Error.jsp</result>
 	</action>
 
+	<action name="AllParticipants" class="Action.AllParticipantsAction" method="execute">
+			<result name="success">/AllParticipants.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
+
+	<action name="SearchUsersByName" class="Action.SearchUsersByNameAction" method="execute">
+			<result name="success">/SearchUsersResult.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
+
+	<action name="AddThisUserToParticipants" class="Action.AddThisUserToParticipantsAction" method="execute">
+			<result name="success">/CreatVoteSuccess.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
+
 	</package>  
 </struts>  
 
