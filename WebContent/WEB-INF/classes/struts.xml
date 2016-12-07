@@ -25,6 +25,13 @@
             <result name="Leaving early pay more">/leavingresult.jsp</result>
             <result name="ERROR">/error.jsp</result>
     </action>
+    
+    <action name="AutoActivity" class="Action.AutoCalculation" method="execute">
+            <result name="Normal">/normalresult.jsp</result>
+            <result name="Girls for free">/girlsresult.jsp</result>
+            <result name="Leaving early pay more">/leavingresult.jsp</result>
+            <result name="ERROR">/error.jsp</result>
+    </action>
   
     <action name="CreatVoteActivityName" class="Action.CreatVoteActivityNameAction" method="execute">
 			<result name="success">/CreatVoteSuccess.jsp</result>

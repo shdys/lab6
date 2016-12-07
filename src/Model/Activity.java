@@ -4,15 +4,17 @@ public class Activity {
 	public String Number;
 	public String Sum;
 	public String Type;
-	public String userEmail;
+	public String Act_name;
 	
 	
 	
-	public String getUserEmail() {
-		return userEmail;
+	
+	
+	public String getAct_name() {
+		return Act_name;
 	}
-	public void setUserEmail(String userEmail) {
-		this.userEmail = userEmail;
+	public void setAct_name(String act_name) {
+		Act_name = act_name;
 	}
 	public String getNumber() {
 		return Number;

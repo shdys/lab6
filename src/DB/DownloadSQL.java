@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import model.Activity;
+import model.AutoActivity;
 import model.Participant;
 import model.user;
 
@@ -49,14 +50,14 @@ public class DownloadSQL {
 	}
 	
 	
-	public Activity getActivity(String Act_name){
+	public AutoActivity getActivity(String Act_name){
 		 connection.ConnectDataBase();
 		 PreparedStatement pst = null;
 		 ResultSet rs = null;
-		 String SEARCH_SQL = "SELECT Number,Sum,Type from activity WHERE Act_name = ?";
+		 String SEARCH_SQL = "SELECT Sum,Type from"+ Act_name +"WHERE IsCreate = Yes";
 
 		try {
-			Activity acty=new Activity();
+			AutoActivity act=new AutoActivity();
 			pst = connection.connect.prepareStatement(SEARCH_SQL);
 
 			pst.setString(1, Act_name);
@@ -65,13 +66,138 @@ public class DownloadSQL {
 			
 
 			while (rs.next()) {
-				acty.setUserEmail(Act_name);
-				acty.setNumber(rs.getString("Number"));
-				acty.setSum(rs.getString("Sum"));
-				acty.setType(rs.getString("Type"));
+				//act.setUserEmail(Act_name);
+				//acty.setNumber(rs.getString("Number"));
+				act.setSum(rs.getString("Sum"));
+				act.setType(rs.getString("Type"));
 			}
 			pst.close();
-	        return acty;
+	        return act;
+		    } 
+		    catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		    }
+	}
+	
+	
+	
+	
+		
+	
+	public AutoActivity getActivityNumber(String Act_name){
+		 connection.ConnectDataBase();
+		 PreparedStatement pst = null;
+		 ResultSet rs = null;
+		 String SEARCH_SQL = "SELECT count(userName) from"+ Act_name;
+
+		try {
+			AutoActivity act=new AutoActivity();
+			pst = connection.connect.prepareStatement(SEARCH_SQL);
+
+			pst.setString(1, Act_name);
+
+			rs = pst.executeQuery();
+			
+
+			while (rs.next()) {
+				//act.setUserEmail(Act_name);
+				//acty.setNumber(rs.getString("Number"));
+				act.setNumber(rs.getString("count(userName)"));
+			}
+			pst.close();
+	        return act;
+		    } 
+		    catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		    }
+	}
+	
+	
+	
+	public AutoActivity getActivityFemale(String Act_name){
+		 connection.ConnectDataBase();
+		 PreparedStatement pst = null;
+		 ResultSet rs = null;
+		 String SEARCH_SQL = "SELECT count(*),userSex from"+ Act_name+"group by userSex having userSex=Femal ";
+
+		try {
+			AutoActivity act=new AutoActivity();
+			pst = connection.connect.prepareStatement(SEARCH_SQL);
+
+			pst.setString(1, Act_name);
+
+			rs = pst.executeQuery();
+			
+
+			while (rs.next()) {
+				//act.setUserEmail(Act_name);
+				//acty.setNumber(rs.getString("Number"));
+				act.setFemale(rs.getString("count(*)"));
+			}
+			pst.close();
+	        return act;
+		    } 
+		    catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		    }
+	}
+	
+	public AutoActivity getActivityLeaving(String Act_name){
+		 connection.ConnectDataBase();
+		 PreparedStatement pst = null;
+		 ResultSet rs = null;
+		 String SEARCH_SQL = "SELECT count(*),leaveEarly from"+ Act_name+"group by leaveEarly having leaveEarly=Yes ";
+
+		try {
+			AutoActivity act=new AutoActivity();
+			pst = connection.connect.prepareStatement(SEARCH_SQL);
+
+			pst.setString(1, Act_name);
+
+			rs = pst.executeQuery();
+			
+
+			while (rs.next()) {
+				//act.setUserEmail(Act_name);
+				//acty.setNumber(rs.getString("Number"));
+				act.setLeavepeople(rs.getString("count(*)"));
+			}
+			pst.close();
+	        return act;
+		    } 
+		    catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		    }
+	}
+	
+	
+	
+	public AutoActivity getActivityPercent(String Act_name){
+		 connection.ConnectDataBase();
+		 PreparedStatement pst = null;
+		 ResultSet rs = null;
+		 String SEARCH_SQL = "SELECT payMorePercentage from"+ Act_name+"where IsCreater=Yes";
+
+		try {
+			AutoActivity act=new AutoActivity();
+			pst = connection.connect.prepareStatement(SEARCH_SQL);
+
+			pst.setString(1, Act_name);
+
+			rs = pst.executeQuery();
+			
+
+			while (rs.next()) {
+				//act.setUserEmail(Act_name);
+				//acty.setNumber(rs.getString("Number"));
+				act.setPercent(rs.getString("payMorePercentage"));
+			}
+			pst.close();
+	        return act;
 		    } 
 		    catch (SQLException e) {
 			e.printStackTrace();
@@ -97,7 +223,7 @@ public class DownloadSQL {
 			
 
 			while (rs.next()) {
-				acty.setUserEmail(Act_name);
+				acty.setAct_name(Act_name);
 				acty.setNumber(rs.getString("Number"));
 				acty.setSum(rs.getString("Sum"));
 				acty.setType(rs.getString("Type"));
