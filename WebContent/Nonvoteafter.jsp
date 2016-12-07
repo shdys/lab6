@@ -48,7 +48,7 @@ session.setAttribute("ename",ename);
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right hidden-xs nav-user">
-      <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb-sm avatar pull-left"> <img src="images/avatar.jpg"> </span><% out.println(ename); %> <b class="caret"></b> </a>
+      <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb-sm avatar pull-left"> <img src="images/avatar.jpg"> </span><% out.println(ename); %><b class="caret"></b> </a>
         <ul class="dropdown-menu animated fadeInRight">
           <span class="arrow top"></span>
           <li> <a href="#">Settings</a> </li>
@@ -63,7 +63,7 @@ session.setAttribute("ename",ename);
   </header>
   <section>
     <section class="hbox stretch"> <!-- .aside -->
-      <aside class="bg-black lter aside-md hidden-print" id="nav">
+      <aside class="bg-light lter b-r aside-md hidden-print" id="nav">
         <section class="vbox">
           <header class="header bg-primary lter text-center clearfix">
             <div class="btn-group">
@@ -83,11 +83,11 @@ session.setAttribute("ename",ename);
               <nav class="nav-primary hidden-xs">
                 <ul class="nav">
                   <li > <a href="index.jsp" > <i class="fa fa-dashboard icon"> <b class="bg-danger"></b> </i> <span>Activities</span> </a> </li>
-                  <li class="active"> <a href="#layout" class="active"> <i class="fa fa-columns icon"> <b class="bg-warning"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>Non-vote</span> </a>
+                  <li > <a href="#layout"> <i class="fa fa-columns icon"> <b class="bg-warning"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>Non-vote</span> </a>
                     <ul class="nav lt">
-                      <li > <a href="Nonvote-n.jsp"> <i class="fa fa-angle-right"></i> <span>Normal</span> </a> </li>
-                      <li > <a href="Nonvote-g.jsp"> <i class="fa fa-angle-right"></i> <span>Girls-for-free</span> </a> </li>
-                      <li class="active"> <a href="Nonvote-l.jsp"  class="active"> <i class="fa fa-angle-right"></i> <span>Leaving-early-more</span> </a> </li>
+                      <li > <a href="Nonvote-n.jsp" class="active"> <i class="fa fa-angle-right"></i> <span>Normal</span> </a> </li>
+                      <li > <a href="Nonvote-g.jsp" > <i class="fa fa-angle-right"></i> <span>Girls-for-free</span> </a> </li>
+                      <li > <a href="Nonvote-l.jsp" > <i class="fa fa-angle-right"></i> <span>Leaving-early-more</span> </a> </li>
                     </ul>
                   </li>
                   <li > <a href="#layout" > <i class="fa fa-columns icon"> <b class="bg-success"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>Vote</span> </a>
@@ -97,11 +97,9 @@ session.setAttribute("ename",ename);
                       <li > <a href="Vote-l.jsp" > <i class="fa fa-angle-right"></i> <span>Leaving-early-more</span> </a> </li>
                     </ul>
                   </li>
-
-                  <li > <a href="Nonvoteafter.jsp" > <i class="fa fa-file-text icon"> <b class="bg-primary dker"></b> </i> <span>Non-vote-after</span> </a>
+                  <li class="active"> <a href="Nonvoteafter.jsp" class="active"> <i class="fa fa-file-text icon"> <b class="bg-primary dker"></b> </i>  <span>Non-vote-after</span> </a>
                   </li>
-                  </li>
-                  <li > <a href="Voteafter.jsp" > <i class="fa fa-pencil icon"> <b class="bg-info"></b> </i> <span>Vote-after</span> </a> </li>
+                  <li > <a href="Voteafter.jsp"> <i class="fa fa-pencil icon"> <b class="bg-info"></b> </i> <span>Vote-after</span> </a> </li>
                 </ul>
               </nav>
               <!-- / nav --> </div>

@@ -97,18 +97,7 @@ session.setAttribute("ename",ename);
                       <li class="active"> <a href="Vote-l.jsp" class="active"> <i class="fa fa-angle-right"></i> <span>Leaving-early-more</span> </a> </li>
                     </ul>
                   </li>
-                  <li > <a href="#pages" > <i class="fa fa-file-text icon"> <b class="bg-primary dker"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>Non-vote-after</span> </a>
-                    <ul class="nav lt">
-                      <li > <a href="gallery.jsp" > <i class="fa fa-angle-right"></i> <span>Gallery</span> </a> </li>
-                      <li > <a href="profile.jsp" > <i class="fa fa-angle-right"></i> <span>Profile</span> </a> </li>
-                      <li > <a href="invoice.jsp" > <i class="fa fa-angle-right"></i> <span>Invoice</span> </a> </li>
-                      <li > <a href="intro.jsp" > <i class="fa fa-angle-right"></i> <span>Intro</span> </a> </li>
-                      <li > <a href="master.jsp" > <i class="fa fa-angle-right"></i> <span>Master</span> </a> </li>
-                      <li > <a href="gmap.jsp" > <i class="fa fa-angle-right"></i> <span>Google Map</span> </a> </li>
-                      <li > <a href="signin.jsp" > <i class="fa fa-angle-right"></i> <span>Signin</span> </a> </li>
-                      <li > <a href="signup.jsp" > <i class="fa fa-angle-right"></i> <span>Signup</span> </a> </li>
-                      <li > <a href="404.jsp" > <i class="fa fa-angle-right"></i> <span>404</span> </a> </li>
-                    </ul>
+                  <li > <a href="Nonvoteafter.jsp" > <i class="fa fa-file-text icon"> <b class="bg-primary dker"></b> </i> <span>Non-vote-after</span> </a>
                   </li>
                   <li > <a href="Voteafter.jsp" > <i class="fa fa-pencil icon"> <b class="bg-info"></b> </i> <span>Vote-after</span> </a> </li>
                 </ul>
