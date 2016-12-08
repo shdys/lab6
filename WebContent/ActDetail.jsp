@@ -68,16 +68,14 @@
     Statement stat = null; 
     ResultSet rs = null;
     Class.forName("com.mysql.jdbc.Driver"); 
-    String url = "jdbc:mysql://localhost:3306/draven"; 
+    String url = "jdbc:mysql://localhost:3306/aa_dutch"; 
     String user = "root"; 
-    String password = "4217";
+    String password = "1234";
     try{
  
 	conn = DriverManager.getConnection(url, user, password);
     stat = conn.createStatement(); 
-    String IsVoteVary = "No";
-    String IsCreaterVary = "Yes";
-    String sql = "insert into activity(Owner,Act_name,Number,Sum,Type,IsVote,IsCreater) values('" + ename + "','" + name + "','" + num + "','" + sum + "','" + type+ "','"+ IsVoteVary+ "','" + IsCreaterVary+ "')";
+    String sql = "insert into activity(Owner,Act_name,Number,Sum,Type) values('" + ename + "','" + name + "','" + num + "','" + sum + "','" + type  + "')";
     stat.executeUpdate(sql); 
     rs = stat.executeQuery("select * from activity"); }
  

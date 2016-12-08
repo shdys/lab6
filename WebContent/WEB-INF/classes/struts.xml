@@ -9,7 +9,7 @@
 	<default-action-ref name="defaultaction"/>
 		
 	<action name="CheckUserRightOrNot" class="Action.CheckUserRightOrNotAction" method="execute">
-			<result name="success">/Mainpage.jsp</result>
+			<result name="success">/index.jsp</result>
 			<result name="error">/LoginError.jsp</result>
 	</action>	
 	
@@ -24,9 +24,9 @@
             <result name="Girls for free">/girlsresult.jsp</result>
             <result name="Leaving early pay more">/leavingresult.jsp</result>
             <result name="ERROR">/error.jsp</result>
-    </action>
+     </action>
   
-    <action name="CreatVoteActivityName" class="Action.CreatVoteActivityNameAction" method="execute">
+	<action name="CreatVoteActivityName" class="Action.CreatVoteActivityNameAction" method="execute">
 			<result name="success">/CreatVoteSuccess.jsp</result>
 			<result name="error">/Error.jsp</result>
 	</action>
@@ -50,7 +50,31 @@
 			<result name="success">/CreateVoteAndVoteSuccess.jsp</result>
 			<result name="error">/Error.jsp</result>
 	</action>
-
+	
+	<action name="AllVoteBeforeActivity" class="Action.AllVoteBeforeActivityAction" method="execute">
+			<result name="success">/AllVoteBeforeActivity.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
+	
+	<action name="VoteBeforeModify" class="Action.VoteBeforeModifyAction" method="execute">
+			<result name="Normal">/NormalNoVoteAfterModify.jsp</result>
+			<result name="Girls">/GirlsNoVoteAfterModify.jsp</result>
+			<result name="Leave">/LeaveNoVoteAfterModify.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
+	
+	<action name="AllNoVoteBeforeActivity" class="Action.AllNoVoteBeforeActivityAction" method="execute">
+			<result name="success">/AllNoVoteBeforeActivity.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
+	
+	<action name="NoVoteBeforeModify" class="Action.NoVoteBeforeModifyAction" method="execute">
+			<result name="Normal">/NormalNoVoteAfterModify.jsp</result>
+			<result name="Girls">/GirlsNoVoteAfterModify.jsp</result>
+			<result name="Leave">/LeaveNoVoteAfterModify.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
+	
 	</package>  
 </struts>  
 

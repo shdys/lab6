@@ -73,8 +73,7 @@ border-color: #a9c6c9;
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
-<%! String url = "jdbc:mysql://localhost:3306/draven";
+String url = "jdbc:mysql://localhost:3306/aa_dutch";
 String qstr="select * from activity";
 %>
 </head>
@@ -217,62 +216,6 @@ String qstr="select * from activity";
 </section>
 <!--Property query area End-->
 
-<!-- Property query area start -->
-<section class="property-query-area">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-3 col-sm-6">
-				<div class="query-title">
-					<h2>Create Your Activity</h2>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<form name="form3" id="ff2" method="post" action="ActDetail.jsp">
-				<div class="col-md-3 col-sm-6">
-					<div class="single-query">
-						<label for="keyword-input">Activity name</label>
-						<input type="text" name="name" "id="name" placeholder="">
-
-					</div>
-				</div>
-<!-- 				<div class="col-md-3 col-sm-6">
-					<div class="single-query">
-						<label for="keyword-input">Number of people</label>
-						<input type="text" name="num" id="num" placeholder="">
-
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6">
-					<div class="single-query">
-						<label for="keyword-input">Sum</label>
-						<input type="text" name ="sum" id="sum" placeholder="">
-
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6">
-					<div class="single-query">
-						<label>Payment type</label>
-						<select name="type" id="type">
-							<option value="1000 sf">Normal</option>
-							<option value="2000 sf">Girls for free</option>
-							<option value="3000 sf">Leaving early pay more</option>
-							<option value="4000 sf">Other</option>
-						</select>
-
-					</div> -->
-					<div class="query-submit-button pull-right">
-						<input type="submit" value="Create">
-					</div>  
-				</div>
-			</form>
-		</div>
-	</div>
-</section>
-<!--Property query area End-->
-
-
-
 <!--Start of Properties Area-->
 <section class="properties-area area-pading fix">
 	<div class="container">
@@ -294,7 +237,7 @@ String qstr="select * from activity";
   <body><center><table width="704" height="500" border="1"  class="hovertable">
  <%
    Class.forName("com.mysql.jdbc.Driver").newInstance();
-   Connection conn = DriverManager.getConnection(url, "root", "4217");
+   Connection conn = DriverManager.getConnection(url, "root", "1234");
    Statement stmt = conn.createStatement();
    ResultSet rs = stmt.executeQuery("select * from activity where Owner='"+ename+"'");
    ResultSetMetaData rsmd = rs.getMetaData();

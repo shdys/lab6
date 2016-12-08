@@ -10,11 +10,6 @@
     <meta name="author" content="">
 	
     <title>login and registration</title>
-      <style type="text/css">
-body {
-	background-image: url(images/226989-106.jpg);
-}
-</style>
 	
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap2.min.css"  type="text/css">
@@ -47,51 +42,39 @@ body {
 	<!--//////////////////////////////////////////////////-->
 	<center><h1>Welcome to our website</h1></center>
 	<div id="page-content" class="single-page">
-		<div class="container">
-			
+		<div class="container">		
 			<div class="row">
 				<div class="col-md-6">
-					<div class="heading"><h2>Login</h2></div>
-					
-					<form name="form1" id="ff1" method="post" action="CheckUserRightOrNot">
+					<div class="heading"><h2>Login</h2></div>		
+					<form name="form1" id="ff1" method="post" action="CheckUserRightOrNot" >
 						<div class="form-group">
 							<input type="text" class="form-control" placeholder="Email Address :" name="userEmail" id="userEmail" required>
 						</div>
-						
-						
-						
-						
 						<div class="form-group">
 							<input type="password" class="form-control" placeholder="Password :" name="userPassword" id="email" required>
 						</div>
 						<button type="submit" class="btn btn-1" name="login" id="login">Login</button>
+						<a href="#">Forgot Your Password ?</a>
 					</form>
-					
 				</div>
 				<div class="col-md-6">
-					<div class="heading"><h2>New User ? Create An Account.</h2></div>
-					
+					<div class="heading"><h2>New User ? Create An Account.</h2></div>		
 					<form name="form2" id="ff2" method="post" action="Registration">
 						<div class="form-group">
 							<input type="text" class="form-control" placeholder="Name :" name="userName" id="firstname" required>
 						</div>
-
 						<div class="form-group">
 							<input type="tel" class="form-control" placeholder="Email Address :" name="userEmail" id="email2" required>
-						</div>
-						
+						</div>				
 						<div class="form-group">
 							<input name="userSex" id="gender" type="radio" value = "male" required> Male <input name="userSex" id="gender" type="radio" value = "female" required> Female 
-						</div>
-						
+						</div>				
 						<div class="form-group">
 							<input type="password" class="form-control" placeholder="Password :" name="userPassword" id="password" required>
-						</div>
-						
+						</div>				
 						<div class="form-group">
 							<input type="password" class="form-control" placeholder="Retype Password :" name="rePassword" id="repassword" required>
-						</div>
-						
+						</div>					
 						<button onclick="return check1()" type="submit" class="btn btn-1" name="registration">Create</button>
 						<button type="reset" class="btn btn-1" name="reset">Reset</button>
 					</form>

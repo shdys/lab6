@@ -10,8 +10,14 @@ public class Participant {
 	public String Sum;
 	public String Type;
 	public String IsCreater;
+	public String VoteResult;
 	
-	
+	public String getVoteResult() {
+		return VoteResult;
+	}
+	public void setVoteResult(String voteResult) {
+		this.VoteResult = voteResult;
+	}
 	public String getUserName() {
 		return userName;
 	}
