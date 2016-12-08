@@ -35,9 +35,10 @@ public class AddThisUserToParticipantsAction extends ActionSupport {
 			DownloadSQL down5 = new DownloadSQL();
 			UploadSQL up5 = new UploadSQL();
 			
+			
 			setUservary(down5.getUserByEmail(getUserEmail()));
-			boolean addSuccess = up5.addThisUserToParticipants(uservary);
-			boolean addSuccess2 = up5.addParticipantToVoteActivity(userEmail);
+			boolean addSuccess = up5.addThisUserToParticipants(uservary,down5.getVoteACTName());
+			boolean addSuccess2 = up5.addParticipantToVoteActivity(userEmail,down5.getVoteACTName());
 			if(addSuccess == false || addSuccess2 == false)
 			{
 				return ERROR;

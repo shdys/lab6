@@ -43,6 +43,11 @@ public class CreatVoteActAndVoteAction {
 	public String execute(){
 		try {
 			UploadSQL up7 = new UploadSQL();
+			DownloadSQL down7 = new DownloadSQL();
+			
+			setVoteActivityName(down7.getVoteACTName());
+			setUserEmail(down7.getVoteACTCreaterEmail());
+			
 			boolean CreatVoteActAndVoteActionFlag =  up7.inputVoteResult(getUserEmail(),getVoteActivityName(),getType());
 			
 			

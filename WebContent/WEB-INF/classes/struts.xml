@@ -75,6 +75,11 @@
 			<result name="error">/Error.jsp</result>
 	</action>
 	
+	<action name="AllSelfCreateActivity" class="Action.DravenTest4Action" method="execute">
+			<result name="success">/AllSelfCreateActivity.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
+	
 	</package>  
 </struts>  
 

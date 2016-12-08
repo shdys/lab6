@@ -5,12 +5,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>DravenTest3</title>
+<title>DravenTest4</title>
 </head>
 <body>
 
 
-<s:action name="AllNoVoteBeforeActivity" executeResult="true"></s:action>
+
+
+<form name="form1" id="ff1" method="post" action="AllSelfCreateActivity">
+<input type="text" class="form-control" placeholder="Email Address :" name="userEmail" id="userEmail" required>
+<button type="submit" class="btn btn-1" name="Submit" id="Creat">Submit</button>
+</form>
 
 
 
@@ -21,7 +26,12 @@
 
 
 
-显示所有事前AA的非投票活动
+
+
+
+
+
+显示所有活动
 
 
 

@@ -113,11 +113,11 @@ public class UploadSQL {
 
 	
 	
-	public boolean addThisUserToParticipants(user uservary)
+	public boolean addThisUserToParticipants(user uservary,String getVoteACTName)
 	{
 		connection.ConnectDataBase();
 		PreparedStatement pst5 = null;
-		String INSERT_SQL5 = "INSERT INTO  act18(userName,userEmail,userSex,IsCreater) VALUES(?,?,?,?)";
+		String INSERT_SQL5 = "INSERT INTO " + getVoteACTName + " (userName,userEmail,userSex,IsCreater) VALUES(?,?,?,?)";
 		boolean flag5 = false;
 		try {
 			pst5 = connection.connect.prepareStatement(INSERT_SQL5);
@@ -140,7 +140,7 @@ public class UploadSQL {
 	
 	
 	
-	public boolean addParticipantToVoteActivity(String UserEmail)
+	public boolean addParticipantToVoteActivity(String UserEmail,String getVoteACTName)
 	{
 		connection.ConnectDataBase();
 		PreparedStatement pst6 = null;
@@ -149,7 +149,7 @@ public class UploadSQL {
 		try {
 			pst6 = connection.connect.prepareStatement(INSERT_SQL6);
 			pst6.setString(1, UserEmail);
-			pst6.setString(2, "act18");
+			pst6.setString(2, getVoteACTName);
 			pst6.setString(3, "Yes");
 			pst6.setString(4, "No");
 			int vary6 = pst6.executeUpdate();
@@ -185,5 +185,31 @@ public class UploadSQL {
 			e.printStackTrace();
 		}
 		return flag7;
+	}
+	
+	
+	public boolean AddActNameToTMPDDT1(String getUserEmail,String getVoteActivityName)
+	{
+		connection.ConnectDataBase();
+		PreparedStatement pst8 = null;
+		String INSERT_SQL8 = "update temporarydata set information1 = ? , information2 = ? where startPage = ? && EndPage = ?";
+		//String INSERT_SQL8 = "update temporarydata set information1 = ?  where  endPage = ?";
+		boolean flag8 = false;
+		try {
+			pst8 = connection.connect.prepareStatement(INSERT_SQL8);
+			pst8.setString(1, getUserEmail);
+			pst8.setString(2, getVoteActivityName);
+			pst8.setString(3, "DravenTest1");
+			pst8.setString(4, "CreatVoteSuccess");
+			
+			int vary8 = pst8.executeUpdate();
+			if(vary8 == 1){
+				flag8 = true;
+			}
+			pst8.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return flag8;
 	}
 }

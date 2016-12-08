@@ -49,8 +49,10 @@ public class CreatVoteActivityNameAction {
 		try {
 			UploadSQL up1 = new UploadSQL();
 			DownloadSQL down1 = new DownloadSQL();
+			up1.AddActNameToTMPDDT1(getUserEmail(),getVoteActivityName());
 			boolean CreatVoteActivityNameFlag =  up1.creatNewVoteActivityName(getUserEmail(),getVoteActivityName(),getBeforeOrAfter());
 			//boolean CreatVoteActivityTableFlag = up.ceratVoteActivityTable(getUserEmail(),getVoteActivityName());
+			//up1.AddActNameToTMPDDT1(getUserEmail(),getVoteActivityName());
 			up1.ceratVoteActivityTable(getUserEmail(),getVoteActivityName());
 			
 			

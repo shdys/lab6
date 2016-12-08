@@ -81,12 +81,12 @@ public class DownloadSQL {
 	}
 	
 	
-	public ArrayList<Participant> getAllParticipant()
+	public ArrayList<Participant> getAllParticipant(String getVoteACTName)
 	{
 		connection.ConnectDataBase();
 		PreparedStatement pst3 = null;
 		ResultSet rs3 = null;
-		String SEARCH_SQL3 = "SELECT * FROM act18";
+		String SEARCH_SQL3 = "SELECT * FROM " + getVoteACTName;
 
 		try {
 			ArrayList<Participant> Participantlist = new ArrayList<Participant>();
@@ -217,6 +217,95 @@ public class DownloadSQL {
 			}
 			pst6.close();	
 			return activityonelist6;
+		    } 
+		    catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		    }
+	}
+	
+	
+	
+	
+	public ArrayList<activityone> getAllSelfCreateActivitys(String getUserEmail){
+		connection.ConnectDataBase();
+		PreparedStatement pst7 = null;
+		ResultSet rs7 = null;
+		String SEARCH_SQL7 = "SELECT Act_name FROM activity WHERE Owner = ?";
+
+		try {
+			ArrayList<activityone> activitylist7 = new ArrayList<activityone>();
+			pst7 = connection.connect.prepareStatement(SEARCH_SQL7);
+			pst7.setString(1, getUserEmail);
+			rs7 = pst7.executeQuery();
+			while (rs7.next()) {
+				activityone com7 = new activityone();
+				
+				com7.setAct_name(rs7.getString("Act_name"));
+				activitylist7.add(com7);
+			}
+			pst7.close();	
+			return activitylist7;
+		    } 
+		    catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		    }
+	}
+	
+	
+	public String getVoteACTName()
+	{
+		connection.ConnectDataBase();
+		PreparedStatement pst8 = null;
+		ResultSet rs8 = null;
+		String SEARCH_SQL8 = "SELECT * FROM temporarydata WHERE StartPage = ? && EndPage = ?";
+
+		try {
+			String ResultString = null;
+			pst8 = connection.connect.prepareStatement(SEARCH_SQL8);
+			pst8.setString(1, "DravenTest1");
+			pst8.setString(2, "CreatVoteSuccess");
+			rs8 = pst8.executeQuery();
+			
+			while (rs8.next()) {
+				String com8;
+				com8=rs8.getString("Information2");
+				ResultString = com8;
+			}
+			pst8.close();	
+			return ResultString;
+					
+		    } 
+		    catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		    }
+	}
+	
+	
+	public String getVoteACTCreaterEmail()
+	{
+		connection.ConnectDataBase();
+		PreparedStatement pst9 = null;
+		ResultSet rs9 = null;
+		String SEARCH_SQL9 = "SELECT * FROM temporarydata WHERE StartPage = ? && EndPage = ?";
+
+		try {
+			String ResultString = null;
+			pst9 = connection.connect.prepareStatement(SEARCH_SQL9);
+			pst9.setString(1, "DravenTest1");
+			pst9.setString(2, "CreatVoteSuccess");
+			rs9 = pst9.executeQuery();
+			
+			while (rs9.next()) {
+				String com9;
+				com9 = rs9.getString("Information1");
+				ResultString = com9;
+			}
+			pst9.close();	
+			return ResultString;
+					
 		    } 
 		    catch (SQLException e) {
 			e.printStackTrace();

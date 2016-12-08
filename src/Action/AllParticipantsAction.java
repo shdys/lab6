@@ -27,7 +27,7 @@ public class AllParticipantsAction extends ActionSupport{
 	public String execute(){
 		try{
 			DownloadSQL down = new DownloadSQL();
-			setParticipants(down.getAllParticipant());
+			setParticipants(down.getAllParticipant(down.getVoteACTName()));
 			return SUCCESS;
 		}catch(Exception e){
 			return ERROR;

@@ -23,8 +23,32 @@ body {
 							<option value="Before">Before</option>
 							<option value="After">After</option>
 </select>
-<button type="submit" class="btn btn-1" name="Creat" id="Creat">Create</button>
+<button type="submit" class="btn btn-1" name="Create" id="Create">Create</button>
 </form>
+
+
+
+
+
+
+
+
+
+
+
+创建投票活动
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </center>
