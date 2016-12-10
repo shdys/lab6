@@ -15,8 +15,41 @@ public class AllSelfCRTACTDetailAction extends ActionSupport{
 	public String Email;
 	public activityone ActivityDetail;
 	public ArrayList<Participant> VoteParticipants;
+	public int LeaveNum = 0;
+	public int NormalNum = 0;
+	public int GirlsNum = 0;
 	
 	
+	public int getLeaveNum() {
+		return LeaveNum;
+	}
+
+
+	public void setLeaveNum(int leaveNum) {
+		LeaveNum = leaveNum;
+	}
+
+
+	public int getNormalNum() {
+		return NormalNum;
+	}
+
+
+	public void setNormalNum(int normalNum) {
+		NormalNum = normalNum;
+	}
+
+
+	public int getGirlsNum() {
+		return GirlsNum;
+	}
+
+
+	public void setGirlsNum(int girlsNum) {
+		GirlsNum = girlsNum;
+	}
+
+
 	public ArrayList<Participant> getVoteParticipants() {
 		return VoteParticipants;
 	}
@@ -75,7 +108,9 @@ public class AllSelfCRTACTDetailAction extends ActionSupport{
 			{
 				setVoteParticipants(down8.getAllParticipant(getAct_name()));
 				up8.AddActnameToTMPDDT4(getAct_name());
-				
+				setNormalNum(down8.getVoteACTNormalNum(getAct_name()));
+				setLeaveNum(down8.getVoteACTLeaveNum(getAct_name()));
+				setGirlsNum(down8.getVoteACTGirlsNum(getAct_name()));
 				if(ActivityDetail.IsCreater.equals("No"))
 				{
 					return "IsVoteParticipant";

@@ -447,6 +447,154 @@ public class DownloadSQL {
 		    }
 	}
 	
+	public int getVoteACTNormalNum(String getAct_name)
+	{
+		connection.ConnectDataBase();
+		PreparedStatement pst14 = null;
+		ResultSet rs14 = null;
+		String SEARCH_SQL14 = "SELECT * FROM " + getAct_name + " WHERE VoteResult = ? ";
+		try {
+			int NormalNum = 0;
+			pst14 = connection.connect.prepareStatement(SEARCH_SQL14);
+			pst14.setString(1, "Normal");
+			rs14 = pst14.executeQuery();
+			while (rs14.next()) {
+				NormalNum += 1;
+			}
+			pst14.close();	
+			return NormalNum;
+		    } 
+		    catch (SQLException e) {
+			e.printStackTrace();
+			return 0;
+		    }
+	}
 	
 	
+	public int getVoteACTLeaveNum(String getAct_name)
+	{
+		connection.ConnectDataBase();
+		PreparedStatement pst15 = null;
+		ResultSet rs15 = null;
+		String SEARCH_SQL15 = "SELECT * FROM " + getAct_name + " WHERE VoteResult = ? ";
+		try {
+			int LeaveNum = 0;
+			pst15 = connection.connect.prepareStatement(SEARCH_SQL15);
+			pst15.setString(1, "Leave");
+			rs15 = pst15.executeQuery();
+			while (rs15.next()) {
+				LeaveNum += 1;
+			}
+			pst15.close();	
+			return LeaveNum;
+		    } 
+		    catch (SQLException e) {
+			e.printStackTrace();
+			return 0;
+		    }
+	}
+	
+	
+	public int getVoteACTGirlsNum(String getAct_name)
+	{
+		connection.ConnectDataBase();
+		PreparedStatement pst16 = null;
+		ResultSet rs16 = null;
+		String SEARCH_SQL16 = "SELECT * FROM " + getAct_name + " WHERE VoteResult = ? ";
+		try {
+			int GirlsNum = 0;
+			pst16 = connection.connect.prepareStatement(SEARCH_SQL16);
+			pst16.setString(1, "Girls");
+			rs16 = pst16.executeQuery();
+			while (rs16.next()) {
+				GirlsNum += 1;
+			}
+			pst16.close();	
+			return GirlsNum;
+		    } 
+		    catch (SQLException e) {
+			e.printStackTrace();
+			return 0;
+		    }
+	}
+	
+	
+	
+	
+	
+	public int getTotalPeopleNum(String getAct_name)
+	{
+		connection.ConnectDataBase();
+		PreparedStatement pst17 = null;
+		ResultSet rs17 = null;
+		String SEARCH_SQL17 = "SELECT * FROM " + getAct_name ;
+		try {
+			int TotalPeopleNum = 0;
+			pst17 = connection.connect.prepareStatement(SEARCH_SQL17);
+			rs17 = pst17.executeQuery();
+			while (rs17.next()) {
+				TotalPeopleNum += 1;
+			}
+			pst17.close();	
+			return TotalPeopleNum;
+		    } 
+		    catch (SQLException e) {
+			e.printStackTrace();
+			return 0;
+		    }
+	}
+	
+	
+	
+	
+	
+	
+	public int getTotalBoyNum(String getAct_name)
+	{
+		connection.ConnectDataBase();
+		PreparedStatement pst18 = null;
+		ResultSet rs18 = null;
+		String SEARCH_SQL18 = "SELECT * FROM " + getAct_name + " WHERE userSex = ? ";
+		try {
+			int TotalBoyNum = 0;
+			pst18 = connection.connect.prepareStatement(SEARCH_SQL18);
+			pst18.setString(1, "male");
+			rs18 = pst18.executeQuery();
+			while (rs18.next()) {
+				TotalBoyNum += 1;
+			}
+			pst18.close();	
+			return TotalBoyNum;
+		    } 
+		    catch (SQLException e) {
+			e.printStackTrace();
+			return 0;
+		    }
+	}
+	
+	
+	
+	
+	public int getTotalNotLeaveNum(String getAct_name)
+	{
+		connection.ConnectDataBase();
+		PreparedStatement pst19 = null;
+		ResultSet rs19 = null;
+		String SEARCH_SQL19 = "SELECT * FROM " + getAct_name + " WHERE leaveEarly = ? ";
+		try {
+			int TotalNotLeaveNum = 0;
+			pst19 = connection.connect.prepareStatement(SEARCH_SQL19);
+			pst19.setString(1, "No");
+			rs19 = pst19.executeQuery();
+			while (rs19.next()) {
+				TotalNotLeaveNum += 1;
+			}
+			pst19.close();	
+			return TotalNotLeaveNum;
+		    } 
+		    catch (SQLException e) {
+			e.printStackTrace();
+			return 0;
+		    }
+	}
 }

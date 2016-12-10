@@ -6,11 +6,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>SCVACTD</title>
+<title>WholeVoteTable</title>
 </head>
-<body>	       		
-	       		
-	       		
+<body>
+
 <table width="200" border="1">
   <tr>
   	<th scope="col">Act_name</th>
@@ -26,9 +25,9 @@
     <th scope="col">VoteResult</th>
   </tr>
   
-  <s:iterator value="VoteParticipants" id="VoteParticipant" status="ss">
+  <s:iterator value="Participants" id="VoteParticipant" status="ss">
   <tr>
-  	<td><s:property value="ActivityDetail.Act_name"/></td>
+  	<td><s:property value="Act_name"/></td>
     <td><s:property value="#VoteParticipant.userName"/></td>
     <td><s:property value="#VoteParticipant.userEmail"/></td>
     <td><s:property value="#VoteParticipant.userSex"/></td>
@@ -42,23 +41,6 @@
   </tr>
   </s:iterator>
 </table>
-
-Normal Vote Number:<s:property value="NormalNum"/><br>
-Girls For Free Vote Number:<s:property value="GirlsNum"/><br>
-Leaving Early Pay More Vote Number:<s:property value="LeaveNum"/><br>
-
-<form name="form1" id="ff1" method="post" action="MakeACTType">
-Make This Activity Type Is:
-<select name="LastType" id="LastType">
-							<option value="Normal">Normal</option>
-							<option value="Girls">Girls</option>
-							<option value="Leave">Leave</option>
-</select>
-<button type="submit" class="btn btn-1" name="Submit" id="Submit">Submit</button>
-</form>
-
-
-
 
 
 </body>

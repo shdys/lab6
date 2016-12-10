@@ -18,10 +18,12 @@ body {
 
 <table width="200" border="1">
   <tr>
-    <th scope="col">userName</th>
-    <th scope="col">userEmail</th>
-    <th scope="col">userSex</th>
+    <th scope="col">UserName</th>
+    <th scope="col">UserEmail</th>
+    <th scope="col">UserSex</th>
+    <th scope="col">LeaveEarly</th>
     <th scope="col">IsCreater</th>
+    <th scope="col">ChangeLeave</th>
   </tr>
   
   <s:iterator value="Participants" id="Participant" status="ss">
@@ -29,7 +31,9 @@ body {
     <td><s:property value="#Participant.userName"/></td>
     <td><s:property value="#Participant.userEmail"/></td>
     <td><s:property value="#Participant.userSex"/></td>
+    <td><s:property value="#Participant.leaveEarly"/></td>
     <td><s:property value="#Participant.IsCreater"/></td>
+    <td><a href='<s:url action="ChangeLeave"><s:param name="ChangeLeaveEmail" value="#Participant.userEmail"/></s:url>'>ChangeLeave</a></td>
   </tr>
   </s:iterator>
   
