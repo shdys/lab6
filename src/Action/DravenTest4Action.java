@@ -6,6 +6,7 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import db.DownloadSQL;
+import db.UploadSQL;
 import model.activityone;
 
 public class DravenTest4Action extends ActionSupport{
@@ -32,6 +33,8 @@ public class DravenTest4Action extends ActionSupport{
 	public String execute(){
 		try{
 			DownloadSQL down = new DownloadSQL();
+			UploadSQL up = new UploadSQL();
+			up.AddEmailToTMPDDT4(getUserEmail());
 			setAllSelfCreateActivitys(down.getAllSelfCreateActivitys(getUserEmail()));
 			return SUCCESS;
 		}catch(Exception e){

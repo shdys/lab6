@@ -80,6 +80,18 @@
 			<result name="error">/Error.jsp</result>
 	</action>
 	
+	<action name="AllSelfCreateActivityDetail" class="Action.AllSelfCRTACTDetailAction" method="execute">
+			<result name="IsVoteParticipant">/SelfParticipantVoteACTDetail.jsp</result>
+			<result name="IsVoteCreater">/SelfCreateVoteACTDetail.jsp</result>
+			<result name="NotVote">/SelfCreateNotVoteACTDetail.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
+	
+	<action name="ChangeParticipantChoice" class="Action.ChangeParticipantChoiceAction" method="execute">
+			<result name="success">/Success.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
+	
 	</package>  
 </struts>  
 

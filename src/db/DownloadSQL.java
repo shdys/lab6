@@ -313,4 +313,140 @@ public class DownloadSQL {
 		    }
 	}
 	
+	
+	public activityone getActivityDetailByACTNMAndEM(String getAct_name,String getEmail){
+		connection.ConnectDataBase();
+		PreparedStatement pst10 = null;
+		ResultSet rs10 = null;
+		String SEARCH_SQL10 = "SELECT * FROM activity WHERE Act_name = ? && Owner = ?";
+
+		try {
+			activityone ActivityDetailResult = new activityone();
+			pst10 = connection.connect.prepareStatement(SEARCH_SQL10);
+			pst10.setString(1, getAct_name);
+			pst10.setString(2, getEmail);
+			rs10 = pst10.executeQuery();
+			while (rs10.next()) {
+				
+				ActivityDetailResult.setOwner(rs10.getString("Owner"));
+				ActivityDetailResult.setAct_name(rs10.getString("Act_Name"));
+				ActivityDetailResult.setNumber(rs10.getString("Number"));
+				ActivityDetailResult.setSum(rs10.getString("Sum"));
+				ActivityDetailResult.setType(rs10.getString("Type"));
+				ActivityDetailResult.setIsVote(rs10.getString("IsVote"));
+				ActivityDetailResult.setIsCreater(rs10.getString("IsCreater"));
+				ActivityDetailResult.setBeforeOrAfter(rs10.getString("BeforeOrAfter"));
+				
+				
+			}
+			pst10.close();	
+			return ActivityDetailResult;
+		    } 
+		    catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		    }
+	}
+	
+	
+	
+	
+	
+	public String getVoteCreaterBOA(String getAct_name){
+		connection.ConnectDataBase();
+		PreparedStatement pst11 = null;
+		ResultSet rs11 = null;
+		String SEARCH_SQL11 = "SELECT * FROM activity WHERE Act_name = ? && IsCreater = ?";
+
+		try {
+			activityone ActivityDetailResult11 = new activityone();
+			pst11 = connection.connect.prepareStatement(SEARCH_SQL11);
+			pst11.setString(1, getAct_name);
+			pst11.setString(2, "Yes");
+			rs11 = pst11.executeQuery();
+			while (rs11.next()) {
+				
+				ActivityDetailResult11.setOwner(rs11.getString("Owner"));
+				ActivityDetailResult11.setAct_name(rs11.getString("Act_Name"));
+				ActivityDetailResult11.setNumber(rs11.getString("Number"));
+				ActivityDetailResult11.setSum(rs11.getString("Sum"));
+				ActivityDetailResult11.setType(rs11.getString("Type"));
+				ActivityDetailResult11.setIsVote(rs11.getString("IsVote"));
+				ActivityDetailResult11.setIsCreater(rs11.getString("IsCreater"));
+				ActivityDetailResult11.setBeforeOrAfter(rs11.getString("BeforeOrAfter"));
+				
+				
+			}
+			pst11.close();	
+			return ActivityDetailResult11.BeforeOrAfter;
+		    } 
+		    catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		    }
+	}
+	
+	
+	public String getACTNMFromTPDDT4()
+	{
+		connection.ConnectDataBase();
+		PreparedStatement pst12 = null;
+		ResultSet rs12 = null;
+		String SEARCH_SQL12 = "SELECT * FROM temporarydata WHERE StartPage = ? && EndPage = ?";
+
+		try {
+			String ResultString12 = null;
+			pst12 = connection.connect.prepareStatement(SEARCH_SQL12);
+			pst12.setString(1, "DravenTest4");
+			pst12.setString(2, "SelfParticipantVoteACTDetail");
+			rs12 = pst12.executeQuery();
+			
+			while (rs12.next()) {
+				String com12;
+				com12=rs12.getString("Information2");
+				ResultString12 = com12;
+			}
+			pst12.close();	
+			return ResultString12;
+					
+		    } 
+		    catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		    }
+	}
+	
+	
+	
+	public String getEMFromTPDT4()
+	{
+		connection.ConnectDataBase();
+		PreparedStatement pst13 = null;
+		ResultSet rs13 = null;
+		String SEARCH_SQL13 = "SELECT * FROM temporarydata WHERE StartPage = ? && EndPage = ?";
+
+		try {
+			String ResultString13 = null;
+			pst13 = connection.connect.prepareStatement(SEARCH_SQL13);
+			pst13.setString(1, "DravenTest4");
+			pst13.setString(2, "SelfParticipantVoteACTDetail");
+			rs13 = pst13.executeQuery();
+			
+			while (rs13.next()) {
+				String com13;
+				com13 = rs13.getString("Information1");
+				ResultString13 = com13;
+			}
+			pst13.close();	
+			return ResultString13;
+					
+		    } 
+		    catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		    }
+	}
+	
+	
+	
 }

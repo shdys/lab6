@@ -140,11 +140,11 @@ public class UploadSQL {
 	
 	
 	
-	public boolean addParticipantToVoteActivity(String UserEmail,String getVoteACTName)
+	public boolean addParticipantToVoteActivity(String UserEmail,String getVoteACTName,String getBeforeOrAfter)
 	{
 		connection.ConnectDataBase();
 		PreparedStatement pst6 = null;
-		String INSERT_SQL6 = "INSERT INTO activity(Owner,Act_name,IsVote,IsCreater) VALUES(?,?,?,?)";
+		String INSERT_SQL6 = "INSERT INTO activity(Owner,Act_name,IsVote,IsCreater,BeforeOrAfter) VALUES(?,?,?,?,?)";
 		boolean flag6 = false;
 		try {
 			pst6 = connection.connect.prepareStatement(INSERT_SQL6);
@@ -152,6 +152,7 @@ public class UploadSQL {
 			pst6.setString(2, getVoteACTName);
 			pst6.setString(3, "Yes");
 			pst6.setString(4, "No");
+			pst6.setString(5, getBeforeOrAfter);
 			int vary6 = pst6.executeUpdate();
 			if(vary6 == 1){
 				flag6 = true;
@@ -212,4 +213,81 @@ public class UploadSQL {
 		}
 		return flag8;
 	}
+	
+	
+	
+	
+	
+	public boolean AddEmailToTMPDDT4(String getUserEmail)
+	{
+		connection.ConnectDataBase();
+		PreparedStatement pst9 = null;
+		String INSERT_SQL9 = "update temporarydata set information1 = ? where startPage = ? && EndPage = ?";
+		boolean flag9 = false;
+		try {
+			pst9 = connection.connect.prepareStatement(INSERT_SQL9);
+			pst9.setString(1, getUserEmail);
+			pst9.setString(2, "DravenTest4");
+			pst9.setString(3, "SelfParticipantVoteACTDetail");
+			
+			int vary9 = pst9.executeUpdate();
+			if(vary9 == 1){
+				flag9 = true;
+			}
+			pst9.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return flag9;
+	}
+	
+	
+	
+	
+	
+	public boolean AddActnameToTMPDDT4(String getAct_name)
+	{
+		connection.ConnectDataBase();
+		PreparedStatement pst10 = null;
+		String INSERT_SQL10 = "update temporarydata set information2 = ? where startPage = ? && EndPage = ?";
+		boolean flag10 = false;
+		try {
+			pst10 = connection.connect.prepareStatement(INSERT_SQL10);
+			pst10.setString(1, getAct_name);
+			pst10.setString(2, "DravenTest4");
+			pst10.setString(3, "SelfParticipantVoteACTDetail");
+			
+			int vary10 = pst10.executeUpdate();
+			if(vary10 == 1){
+				flag10 = true;
+			}
+			pst10.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return flag10;
+	}
+	
+	
+	public boolean changeVoteResult(String getAct_Name,String getEmail,String getVoteResult)
+	{
+		connection.ConnectDataBase();
+		PreparedStatement pst11 = null;
+		String INSERT_SQL11 = "update "+getAct_Name+" set VoteResult = ? where userEmail = ?";
+		boolean flag11 = false;
+		try {
+			pst11 = connection.connect.prepareStatement(INSERT_SQL11);
+			pst11.setString(1, getVoteResult);
+			pst11.setString(2, getEmail);
+			int vary11 = pst11.executeUpdate();
+			if(vary11 == 1){
+				flag11 = true;
+			}
+			pst11.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return flag11;
+	}
+	
 }
