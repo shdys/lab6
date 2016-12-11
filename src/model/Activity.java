@@ -8,6 +8,7 @@ public class Activity {
 	
 	
 	
+	
 	public String getUserEmail() {
 		return userEmail;
 	}
@@ -18,19 +19,19 @@ public class Activity {
 		return Number;
 	}
 	public void setNumber(String number) {
-		Number = number;
+		this.Number = number;
 	}
 	public String getSum() {
 		return Sum;
 	}
 	public void setSum(String sum) {
-		Sum = sum;
+		this.Sum = sum;
 	}
 	public String getType() {
 		return Type;
 	}
 	public void setType(String type) {
-		Type = type;
+		this.Type = type;
 	}
 
 }

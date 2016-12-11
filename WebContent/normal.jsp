@@ -8,6 +8,11 @@
 	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<title>Normal</title>
+	      <style type="text/css">
+body {
+	background-image: url(images/226989-106.jpg);
+}
+</style>
 	<style type="text/css">
 		
 		.col-center-block {
@@ -24,6 +29,7 @@
 	</style>
 </head>
 <body>
+<li><a href="Mainpage.jsp" class="current">Return to the main page.</a></li>
 	<% 
 	String actname =(String)session.getAttribute("actname");
 	session.setAttribute("actname",actname);

@@ -37,18 +37,7 @@ session.setAttribute("ename",ename);
       <li class="dropdown"> <a href="#" class="dropdown-toggle dker" data-toggle="dropdown"> <i class="fa fa-building-o"></i> <span class="font-bold">Activity</span> </a>
         <section class="dropdown-menu aside-xl on animated fadeInLeft no-borders lt">
           <div class="wrapper lter m-t-n-xs"> <a href="#" class="thumb pull-left m-r"> <img src="images/avatar.jpg" class="img-circle"> </a>
-            <div class="clear"> <a href="#"><span class="text-white font-bold"><% out.println(ename); %></a></span> <small class="block">Art Director</small> <a href="#" class="btn btn-xs btn-success m-t-xs">Upgrade</a> </div>
-          </div>
-          <div class="row m-l-none m-r-none m-b-n-xs text-center">
-            <div class="col-xs-4">
-              <div class="padder-v"> <span class="m-b-xs h4 block text-white">245</span> <small class="text-muted">Followers</small> </div>
-            </div>
-            <div class="col-xs-4 dk">
-              <div class="padder-v"> <span class="m-b-xs h4 block text-white">55</span> <small class="text-muted">Likes</small> </div>
-            </div>
-            <div class="col-xs-4">
-              <div class="padder-v"> <span class="m-b-xs h4 block text-white">2,035</span> <small class="text-muted">Photos</small> </div>
-            </div>
+            <div class="clear"> <a href="#"><span class="text-white font-bold"><% out.println(ename); %></a></span> <small class="block">New user</small> </div>
           </div>
         </section>
       </li>
@@ -58,12 +47,9 @@ session.setAttribute("ename",ename);
       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb-sm avatar pull-left"> <img src="images/avatar.jpg"> </span> <% out.println(ename); %><b class="caret"></b> </a>
         <ul class="dropdown-menu animated fadeInRight">
           <span class="arrow top"></span>
-          <li> <a href="#">Settings</a> </li>
-          <li> <a href="profile.jsp">Profile</a> </li>
-          <li> <a href="#"> <span class="badge bg-danger pull-right">3</span> Notifications </a> </li>
-          <li> <a href="docs.jsp">Help</a> </li>
+          <li> <a href="index.jsp">Index</a> </li>
           <li class="divider"></li>
-          <li> <a href="modal.lockme.jsp" data-toggle="ajaxModal" >Logout</a> </li>
+          <li> <a href="signin.jsp">Logout</a> </li>
         </ul>
       </li>
     </ul>
@@ -72,19 +58,6 @@ session.setAttribute("ename",ename);
     <section class="hbox stretch"> <!-- .aside -->
       <aside class="bg-dark lter aside-md hidden-print" id="nav">
         <section class="vbox">
-          <header class="header bg-primary lter text-center clearfix">
-            <div class="btn-group">
-              <button type="button" class="btn btn-sm btn-dark btn-icon" title="New project"><i class="fa fa-plus"></i></button>
-              <div class="btn-group hidden-nav-xs">
-                <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown"> Switch Project <span class="caret"></span> </button>
-                <ul class="dropdown-menu text-left">
-                  <li><a href="#">Project</a></li>
-                  <li><a href="#">Another Project</a></li>
-                  <li><a href="#">More Projects</a></li>
-                </ul>
-              </div>
-            </div>
-          </header>
           <section class="w-f scrollable">
             <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px" data-color="#333333"> <!-- nav -->
               <nav class="nav-primary hidden-xs">
@@ -92,9 +65,7 @@ session.setAttribute("ename",ename);
                   <li class="active"> <a href="index.jsp" class="active"> <i class="fa fa-dashboard icon"> <b class="bg-danger"></b> </i> <span>Activities</span> </a> </li>
                   <li > <a href="#layout" > <i class="fa fa-columns icon"> <b class="bg-warning"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>Non-vote</span> </a>
                     <ul class="nav lt">
-                      <li > <a href="Nonvote-n.jsp" > <i class="fa fa-angle-right"></i> <span>Normal</span> </a> </li>
-                      <li > <a href="Nonvote-g.jsp" > <i class="fa fa-angle-right"></i> <span>Girls-for-free</span> </a> </li>
-                      <li > <a href="Nonvote-l.jsp" > <i class="fa fa-angle-right"></i> <span>Leaving-early-more</span> </a> </li>
+                      <li > <a href="Nonvote-n.jsp" > <i class="fa fa-angle-right"></i> <span>Create and Calculate</span> </a> </li>
                     </ul>
                   </li>
                   <li > <a href="#layout" > <i class="fa fa-columns icon"> <b class="bg-success"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>Vote</span> </a>
@@ -136,8 +107,7 @@ session.setAttribute("ename",ename);
             </div>
             <a href="#nav" data-toggle="class:nav-xs" class="pull-right btn btn-sm btn-dark btn-icon"> <i class="fa fa-angle-left text"></i> <i class="fa fa-angle-right text-active"></i> </a>
             <div class="btn-group hidden-nav-xs">
-              <button type="button" title="Chats" class="btn btn-icon btn-sm btn-dark" data-toggle="dropdown" data-target="#chat"><i class="fa fa-comment-o"></i></button>
-              <button type="button" title="Contacts" class="btn btn-icon btn-sm btn-dark" data-toggle="dropdown" data-target="#invite"><i class="fa fa-facebook"></i></button>
+
             </div>
           </footer>
         </section>

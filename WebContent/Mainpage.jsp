@@ -73,7 +73,8 @@ border-color: #a9c6c9;
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-String url = "jdbc:mysql://localhost:3306/aa_dutch";
+%>
+<%! String url = "jdbc:mysql://localhost:3306/draven";
 String qstr="select * from activity";
 %>
 </head>
@@ -237,7 +238,7 @@ String qstr="select * from activity";
   <body><center><table width="704" height="500" border="1"  class="hovertable">
  <%
    Class.forName("com.mysql.jdbc.Driver").newInstance();
-   Connection conn = DriverManager.getConnection(url, "root", "1234");
+   Connection conn = DriverManager.getConnection(url, "root", "4217");
    Statement stmt = conn.createStatement();
    ResultSet rs = stmt.executeQuery("select * from activity where Owner='"+ename+"'");
    ResultSetMetaData rsmd = rs.getMetaData();

@@ -5,6 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Successed</title>
+      <style type="text/css">
+body {
+	background-image: url(images/340362-106.jpg);
+}
+</style>
 </head>
 <body>
 <li><a href="LoginAndRegistration.jsp" class="current">Return to the page of login and registration.</a></li>

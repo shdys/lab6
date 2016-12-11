@@ -65,19 +65,6 @@ session.setAttribute("ename",ename);
     <section class="hbox stretch"> <!-- .aside -->
       <aside class="bg-light lter b-r aside-md hidden-print" id="nav">
         <section class="vbox">
-          <header class="header bg-primary lter text-center clearfix">
-            <div class="btn-group">
-              <button type="button" class="btn btn-sm btn-dark btn-icon" title="New project"><i class="fa fa-plus"></i></button>
-              <div class="btn-group hidden-nav-xs">
-                <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown"> Switch Project <span class="caret"></span> </button>
-                <ul class="dropdown-menu text-left">
-                  <li><a href="#">Project</a></li>
-                  <li><a href="#">Another Project</a></li>
-                  <li><a href="#">More Projects</a></li>
-                </ul>
-              </div>
-            </div>
-          </header>
           <section class="w-f scrollable">
             <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px" data-color="#333333"> <!-- nav -->
               <nav class="nav-primary hidden-xs">
@@ -85,9 +72,7 @@ session.setAttribute("ename",ename);
                   <li > <a href="index.jsp" > <i class="fa fa-dashboard icon"> <b class="bg-danger"></b> </i> <span>Activities</span> </a> </li>
                   <li > <a href="#layout"> <i class="fa fa-columns icon"> <b class="bg-warning"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>Non-vote</span> </a>
                     <ul class="nav lt">
-                      <li > <a href="Nonvote-n.jsp" class="active"> <i class="fa fa-angle-right"></i> <span>Normal</span> </a> </li>
-                      <li > <a href="Nonvote-g.jsp" > <i class="fa fa-angle-right"></i> <span>Girls-for-free</span> </a> </li>
-                      <li > <a href="Nonvote-l.jsp" > <i class="fa fa-angle-right"></i> <span>Leaving-early-more</span> </a> </li>
+                      <li > <a href="Nonvote-n.jsp" > <i class="fa fa-angle-right"></i> <span>Create and Calculate</span> </a> </li>
                     </ul>
                   </li>
                   <li > <a href="#layout" > <i class="fa fa-columns icon"> <b class="bg-success"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>Vote</span> </a>
@@ -129,8 +114,6 @@ session.setAttribute("ename",ename);
             </div>
             <a href="#nav" data-toggle="class:nav-xs" class="pull-right btn btn-sm btn-black btn-icon"> <i class="fa fa-angle-left text"></i> <i class="fa fa-angle-right text-active"></i> </a>
             <div class="btn-group hidden-nav-xs">
-              <button type="button" title="Chats" class="btn btn-icon btn-sm btn-black" data-toggle="dropdown" data-target="#chat"><i class="fa fa-comment-o"></i></button>
-              <button type="button" title="Contacts" class="btn btn-icon btn-sm btn-black" data-toggle="dropdown" data-target="#invite"><i class="fa fa-facebook"></i></button>
             </div>
           </footer>
         </section>

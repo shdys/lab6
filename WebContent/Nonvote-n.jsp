@@ -65,19 +65,6 @@ session.setAttribute("ename",ename);
     <section class="hbox stretch"> <!-- .aside -->
       <aside class="bg-black lter aside-md hidden-print" id="nav">
         <section class="vbox">
-          <header class="header bg-primary lter text-center clearfix">
-            <div class="btn-group">
-              <button type="button" class="btn btn-sm btn-dark btn-icon" title="New project"><i class="fa fa-plus"></i></button>
-              <div class="btn-group hidden-nav-xs">
-                <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown"> Switch Project <span class="caret"></span> </button>
-                <ul class="dropdown-menu text-left">
-                  <li><a href="#">Project</a></li>
-                  <li><a href="#">Another Project</a></li>
-                  <li><a href="#">More Projects</a></li>
-                </ul>
-              </div>
-            </div>
-          </header>
           <section class="w-f scrollable">
             <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px" data-color="#333333"> <!-- nav -->
               <nav class="nav-primary hidden-xs">
@@ -85,9 +72,7 @@ session.setAttribute("ename",ename);
                   <li > <a href="index.jsp" > <i class="fa fa-dashboard icon"> <b class="bg-danger"></b> </i> <span>Activities</span> </a> </li>
                   <li class="active"> <a href="#layout" class="active"> <i class="fa fa-columns icon"> <b class="bg-warning"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>Non-vote</span> </a>
                     <ul class="nav lt">
-                      <li class="active"> <a href="Nonvote-n.jsp" class="active"> <i class="fa fa-angle-right"></i> <span>Normal</span> </a> </li>
-                      <li > <a href="Nonvote-g.jsp" > <i class="fa fa-angle-right"></i> <span>Girls-for-free</span> </a> </li>
-                      <li > <a href="Nonvote-l.jsp" > <i class="fa fa-angle-right"></i> <span>Leaving-early-more</span> </a> </li>
+                      <li > <a href="Nonvote-n.jsp" > <i class="fa fa-angle-right"></i> <span>Create and Calculate</span> </a> </li>
                     </ul>
                   </li>
                   <li > <a href="#layout" > <i class="fa fa-columns icon"> <b class="bg-success"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>Vote</span> </a>
@@ -129,8 +114,6 @@ session.setAttribute("ename",ename);
             </div>
             <a href="#nav" data-toggle="class:nav-xs" class="pull-right btn btn-sm btn-black btn-icon"> <i class="fa fa-angle-left text"></i> <i class="fa fa-angle-right text-active"></i> </a>
             <div class="btn-group hidden-nav-xs">
-              <button type="button" title="Chats" class="btn btn-icon btn-sm btn-black" data-toggle="dropdown" data-target="#chat"><i class="fa fa-comment-o"></i></button>
-              <button type="button" title="Contacts" class="btn btn-icon btn-sm btn-black" data-toggle="dropdown" data-target="#invite"><i class="fa fa-facebook"></i></button>
             </div>
           </footer>
         </section>
@@ -139,10 +122,50 @@ session.setAttribute("ename",ename);
       <section id="content">
         <section class="vbox">
           <header class="header bg-white b-b b-light">
-            <p>Layout with black color</p>
+            <p>Create Your Activity</p>
           </header>
           <section class="scrollable wrapper w-f">
-            <p class="h4">Contents...</p>
+<section class="property-query-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 col-sm-6">
+			</div>
+		</div>
+		<div class="row">
+			<form name="form2" id="ff2" method="post" action="ActDetail.jsp">
+					<div class="single-query">
+						<label for="keyword-input">Activity name</label>
+						<input type="text" name="name" "id="name" placeholder="">
+
+					</div>
+					<div class="single-query">
+						<label for="keyword-input">Number of people</label>
+						<input type="text" name="num" id="num" placeholder="">
+
+					</div>
+					<div class="single-query">
+						<label for="keyword-input">Sum</label>
+						<input type="text" name ="sum" id="sum" placeholder="">
+
+					</div>
+					<div class="single-query">
+						<label>Payment type</label>
+						<select name="type" id="type">
+							<option value="1000 sf">Normal</option>
+							<option value="2000 sf">Girls for free</option>
+							<option value="3000 sf">Leaving early pay more</option>
+							<option value="4000 sf">Other</option>
+						</select>
+
+					</div>
+					<div class="query-submit-button pull-right">
+						<input type="submit" value="Create">
+					</div>  
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
           </section>
           <footer class="footer bg-white b-t b-light">
             <p>This is a footer</p>
