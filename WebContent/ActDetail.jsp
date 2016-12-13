@@ -39,32 +39,9 @@
     String sum = request.getParameter("sum");
     out.println(sum);
     String type = request.getParameter("type");
-<<<<<<< HEAD
     out.println(type);
     String BorA = request.getParameter("BorA");
     out.println(BorA);
-=======
-    if(type.substring(0,1).equals("1"))
-    {
-    	type="Normal";
-    	response.sendRedirect("normal.jsp");
-    }
-    if(type.substring(0,1).equals("2"))
-	{
-		type="Girls for free";
-	    response.sendRedirect("Girls.jsp");
-	}
-    if(type.substring(0,1).equals("3"))
-	{
-		type="Leaving early pay more";
-		response.sendRedirect("Leaving.jsp");
-	}
-    if(type.substring(0,1).equals("4"))
-	{
-		type="Other";
-	}
-    out.println(type);
->>>>>>> adc46026a2105fee7e64b6adbf17de99ff59855b
 
     
     
@@ -81,13 +58,9 @@
  
 	conn = DriverManager.getConnection(url, user, password);
     stat = conn.createStatement(); 
-<<<<<<< HEAD
     String IsVoteVary = "No";
     String IsCreaterVary = "Yes";
     String sql = "insert into activity(Owner,Act_name,Number,Sum,Type,IsVote,IsCreater,BeforeOrAfter) values('" + ename + "','" + name + "','" + num + "','" + sum + "','" + type+ "','"+ IsVoteVary+ "','" + IsCreaterVary+"','" + BorA+ "')";
-=======
-    String sql = "insert into activity(Owner,Act_name,Number,Sum,Type) values('" + ename + "','" + name + "','" + num + "','" + sum + "','" + type  + "')";
->>>>>>> adc46026a2105fee7e64b6adbf17de99ff59855b
     stat.executeUpdate(sql); 
     rs = stat.executeQuery("select * from activity"); }
  
@@ -133,7 +106,6 @@ catch(Exception e){}
     }
     %>     
     <%  session.setAttribute("actname",name);  %>
-<<<<<<< HEAD
     
     
     
@@ -153,8 +125,6 @@ catch(Exception e){}
 	{
 		type="Other";
 	}%>
-=======
->>>>>>> adc46026a2105fee7e64b6adbf17de99ff59855b
       </body>
 </html>
 

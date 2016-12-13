@@ -2,6 +2,11 @@ package Action;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.apache.struts2.ServletActionContext;
+
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -32,6 +37,9 @@ public class DravenTest4Action extends ActionSupport{
 	@Override
 	public String execute(){
 		try{
+			HttpServletRequest request=ServletActionContext.getRequest();
+			HttpSession session= request.getSession();
+			setUserEmail( (String)session.getAttribute("ename"));
 			DownloadSQL down = new DownloadSQL();
 			UploadSQL up = new UploadSQL();
 			up.AddEmailToTMPDDT4(getUserEmail());

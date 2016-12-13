@@ -73,12 +73,8 @@ border-color: #a9c6c9;
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-<<<<<<< HEAD
 %>
 <%! String url = "jdbc:mysql://localhost:3306/draven";
-=======
-String url = "jdbc:mysql://localhost:3306/aa_dutch";
->>>>>>> adc46026a2105fee7e64b6adbf17de99ff59855b
 String qstr="select * from activity";
 %>
 </head>
@@ -242,11 +238,7 @@ String qstr="select * from activity";
   <body><center><table width="704" height="500" border="1"  class="hovertable">
  <%
    Class.forName("com.mysql.jdbc.Driver").newInstance();
-<<<<<<< HEAD
    Connection conn = DriverManager.getConnection(url, "root", "4217");
-=======
-   Connection conn = DriverManager.getConnection(url, "root", "1234");
->>>>>>> adc46026a2105fee7e64b6adbf17de99ff59855b
    Statement stmt = conn.createStatement();
    ResultSet rs = stmt.executeQuery("select * from activity where Owner='"+ename+"'");
    ResultSetMetaData rsmd = rs.getMetaData();

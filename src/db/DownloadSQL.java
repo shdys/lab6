@@ -150,18 +150,19 @@ public class DownloadSQL {
 	
 	
 	
-	public ArrayList<activityone> getAllVoteBeforeActivitys()
+	public ArrayList<activityone> getAllVoteBeforeActivitys(String getUserEmail)
 	{
 		connection.ConnectDataBase();
 		PreparedStatement pst5 = null;
 		ResultSet rs5 = null;
-		String SEARCH_SQL5 = "SELECT * FROM activity WHERE IsVote = ? && IsCreater = ? && BeforeOrAfter = ?";
+		String SEARCH_SQL5 = "SELECT * FROM activity WHERE IsVote = ? && IsCreater = ? && BeforeOrAfter = ? && Owner = ?";
 		try {
 			ArrayList<activityone> activityonelist5 = new ArrayList<activityone>();
 			pst5 = connection.connect.prepareStatement(SEARCH_SQL5);
 			pst5.setString(1, "Yes");
 			pst5.setString(2, "Yes");
 			pst5.setString(3, "Before");
+			pst5.setString(4, getUserEmail);
 			rs5 = pst5.executeQuery();
 			while (rs5.next()) {
 				activityone com5  = new activityone();
@@ -188,18 +189,19 @@ public class DownloadSQL {
 	
 	
 	
-	public ArrayList<activityone> getAllNoVoteBeforeActivitys()
+	public ArrayList<activityone> getAllNoVoteBeforeActivitys(String getUserEmail)
 	{
 		connection.ConnectDataBase();
 		PreparedStatement pst6 = null;
 		ResultSet rs6 = null;
-		String SEARCH_SQL6 = "SELECT * FROM activity WHERE IsVote = ? && IsCreater = ? && BeforeOrAfter = ?";
+		String SEARCH_SQL6 = "SELECT * FROM activity WHERE IsVote = ? && IsCreater = ? && BeforeOrAfter = ? && Owner = ?";
 		try {
 			ArrayList<activityone> activityonelist6 = new ArrayList<activityone>();
 			pst6 = connection.connect.prepareStatement(SEARCH_SQL6);
 			pst6.setString(1, "No");
 			pst6.setString(2, "Yes");
 			pst6.setString(3, "Before");
+			pst6.setString(4, getUserEmail);
 			rs6 = pst6.executeQuery();
 			while (rs6.next()) {
 				activityone com6  = new activityone();

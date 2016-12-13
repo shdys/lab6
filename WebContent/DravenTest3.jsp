@@ -10,6 +10,22 @@
 <body>
 
 
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+String url = "jdbc:mysql://localhost:3306/aa_dutch";
+String qstr="select * from activity";
+String ename = request.getParameter("userEmail");  
+if (ename==null)
+{
+    request.setCharacterEncoding("gbk");
+    Object ename1= request.getSession().getAttribute("ename");
+    ename = (String)ename1;
+}
+session.setAttribute("ename",ename);
+%>
+
+
 <s:action name="AllNoVoteBeforeActivity" executeResult="true"></s:action>
 
 
@@ -21,7 +37,7 @@
 
 
 
-显示所有事前AA的非投票活动
+
 
 
 

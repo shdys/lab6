@@ -43,7 +43,7 @@ session.setAttribute("ename",ename);
       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb-sm avatar pull-left"> <img src="images/avatar.jpg"> </span><% out.println(ename); %><b class="caret"></b> </a>
         <ul class="dropdown-menu animated fadeInRight">
           <span class="arrow top"></span>
-          <li> <a href="index.jsp">Index</a> </li>
+          <li> <a href="DravenTest4.jsp">Index</a> </li>
           <li> <a href="signin.jsp" data-toggle="ajaxModal" >Logout</a> </li>
         </ul>
       </li>
@@ -57,7 +57,7 @@ session.setAttribute("ename",ename);
             <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px" data-color="#333333"> <!-- nav -->
               <nav class="nav-primary hidden-xs">
                 <ul class="nav">
-                  <li > <a href="index.jsp" > <i class="fa fa-dashboard icon"> <b class="bg-danger"></b> </i> <span>Activities</span> </a> </li>
+                  <li > <a href="DravenTest4.jsp" > <i class="fa fa-dashboard icon"> <b class="bg-danger"></b> </i> <span>Activities</span> </a> </li>
                   <li > <a href="#layout"> <i class="fa fa-columns icon"> <b class="bg-warning"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>Non-vote</span> </a>
                     <ul class="nav lt">
                       <li > <a href="Nonvote-n.jsp" > <i class="fa fa-angle-right"></i> <span>Create and Calculate</span> </a> </li>

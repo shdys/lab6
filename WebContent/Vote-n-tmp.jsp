@@ -111,11 +111,17 @@ session.setAttribute("ename",ename);
             <p>Layout with black color</p>
           </header>
           <section class="scrollable wrapper w-f">
-            <p class="h4">Contents...</p>
+            <form name="form1" id="ff1" method="post" action="CreatVoteActivityName">
+<!-- <input type="text" class="form-control" placeholder="Email Address :" name="userEmail" id="userEmail" required> -->
+<input type="text" class="form-control" placeholder="Vote Activity Name :" name="voteActivityName" id="voteActivityName" required>
+<select name="BeforeOrAfter" class="form-control" id="BeforeOrAfter">
+							<option value="Before">Before</option>
+							<option value="After">After</option>
+</select>
+<button type="submit" class="btn btn-1" name="Create" id="Create">Create</button>
+</form>
           </section>
-          <footer class="footer bg-white b-t b-light">
-            <p>This is a footer</p>
-          </footer>
+
         </section>
         <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="#nav"></a> </section>
       <aside class="bg-light lter b-l aside-md hide" id="notes">

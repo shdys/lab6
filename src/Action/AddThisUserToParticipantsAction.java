@@ -12,7 +12,7 @@ import model.user;
 
 
 public class AddThisUserToParticipantsAction extends ActionSupport {
-	public String userEmail;
+	public String userEmail1;
 	public user uservary;
 	public String BeforeOrAfter;
 	
@@ -22,11 +22,12 @@ public class AddThisUserToParticipantsAction extends ActionSupport {
 	public void setBeforeOrAfter(String beforeOrAfter) {
 		BeforeOrAfter = beforeOrAfter;
 	}
-	public String getUserEmail() {
-		return userEmail;
+	
+	public String getUserEmail1() {
+		return userEmail1;
 	}
-	public void setUserEmail(String userEmail) {
-		this.userEmail = userEmail;
+	public void setUserEmail1(String userEmail1) {
+		this.userEmail1 = userEmail1;
 	}
 	public user getUservary() {
 		return uservary;
@@ -43,10 +44,10 @@ public class AddThisUserToParticipantsAction extends ActionSupport {
 			UploadSQL up5 = new UploadSQL();
 			setBeforeOrAfter(down5.getVoteCreaterBOA(down5.getVoteACTName()));
 			
-			setUservary(down5.getUserByEmail(getUserEmail()));
-			boolean addSuccess = up5.addThisUserToParticipants(uservary,down5.getVoteACTName());
+			setUservary(down5.getUserByEmail(getUserEmail1()));
+			boolean addSuccess = up5.addThisUserToParticipants(getUservary(),down5.getVoteACTName());
 			
-			boolean addSuccess2 = up5.addParticipantToVoteActivity(userEmail,down5.getVoteACTName(),getBeforeOrAfter());
+			boolean addSuccess2 = up5.addParticipantToVoteActivity(getUserEmail1(),down5.getVoteACTName(),getBeforeOrAfter());
 			if(addSuccess == false || addSuccess2 == false)
 			{
 				return ERROR;
