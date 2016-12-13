@@ -47,6 +47,9 @@ public class CreatVoteActivityNameAction {
 
 	public String execute(){
 		try {
+			HttpServletRequest request=ServletActionContext.getRequest();
+			HttpSession session= request.getSession();
+			setUserEmail((String)session.getAttribute("ename")) ;
 			UploadSQL up1 = new UploadSQL();
 			DownloadSQL down1 = new DownloadSQL();
 			up1.AddActNameToTMPDDT1(getUserEmail(),getVoteActivityName());
