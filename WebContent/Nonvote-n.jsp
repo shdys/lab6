@@ -34,29 +34,18 @@ session.setAttribute("ename",ename);
             <div class="clear"> <a href="#"><span class="text-white font-bold"><% out.println(ename); %></a></span> <small class="block">Art Director</small> <a href="#" class="btn btn-xs btn-success m-t-xs">Upgrade</a> </div>
           </div>
           <div class="row m-l-none m-r-none m-b-n-xs text-center">
-            <div class="col-xs-4">
-              <div class="padder-v"> <span class="m-b-xs h4 block text-white">245</span> <small class="text-muted">Followers</small> </div>
-            </div>
-            <div class="col-xs-4 dk">
-              <div class="padder-v"> <span class="m-b-xs h4 block text-white">55</span> <small class="text-muted">Likes</small> </div>
-            </div>
-            <div class="col-xs-4">
-              <div class="padder-v"> <span class="m-b-xs h4 block text-white">2,035</span> <small class="text-muted">Photos</small> </div>
-            </div>
+
           </div>
         </section>
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right hidden-xs nav-user">
-      <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb-sm avatar pull-left"> <img src="images/avatar.jpg"> </span><% out.println(ename); %><b class="caret"></b> </a>
+      <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb-sm avatar pull-left"> <img src="images/avatar.jpg"> </span> <% out.println(ename); %><b class="caret"></b> </a>
         <ul class="dropdown-menu animated fadeInRight">
           <span class="arrow top"></span>
-          <li> <a href="#">Settings</a> </li>
-          <li> <a href="profile.jsp">Profile</a> </li>
-          <li> <a href="#"> <span class="badge bg-danger pull-right">3</span> Notifications </a> </li>
-          <li> <a href="docs.jsp">Help</a> </li>
+          <li> <a href="index.jsp">Index</a> </li>
           <li class="divider"></li>
-          <li> <a href="modal.lockme.jsp" data-toggle="ajaxModal" >Logout</a> </li>
+          <li> <a href="signin.jsp">Logout</a> </li>
         </ul>
       </li>
     </ul>
@@ -72,14 +61,12 @@ session.setAttribute("ename",ename);
                   <li > <a href="index.jsp" > <i class="fa fa-dashboard icon"> <b class="bg-danger"></b> </i> <span>Activities</span> </a> </li>
                   <li class="active"> <a href="#layout" class="active"> <i class="fa fa-columns icon"> <b class="bg-warning"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>Non-vote</span> </a>
                     <ul class="nav lt">
-                      <li > <a href="Nonvote-n.jsp" > <i class="fa fa-angle-right"></i> <span>Create and Calculate</span> </a> </li>
+                      <li class="active"> <a href="Nonvote-n.jsp" class="active"> <i class="fa fa-angle-right"></i> <span>Create and Calculate</span> </a> </li>
                     </ul>
                   </li>
                   <li > <a href="#layout" > <i class="fa fa-columns icon"> <b class="bg-success"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>Vote</span> </a>
                     <ul class="nav lt">
-                      <li > <a href="Vote-n.jsp" > <i class="fa fa-angle-right"></i> <span>Normal</span> </a> </li>
-                      <li > <a href="Vote-g.jsp" > <i class="fa fa-angle-right"></i> <span>Girls-for-free</span> </a> </li>
-                      <li > <a href="Vote-l.jsp" > <i class="fa fa-angle-right"></i> <span>Leaving-early-more</span> </a> </li>
+                      <li > <a href="Vote-n.jsp" > <i class="fa fa-angle-right"></i> <span>Create and Vote</span> </a> </li>
                     </ul>
                   </li>
                   <li > <a href="Nonvoteafter.jsp" > <i class="fa fa-file-text icon"> <b class="bg-primary dker"></b> </i> <span>Non-vote-after</span> </a>
@@ -133,33 +120,39 @@ session.setAttribute("ename",ename);
 		</div>
 		<div class="row">
 			<form name="form2" id="ff2" method="post" action="ActDetail.jsp">
-					<div class="single-query">
-						<label for="keyword-input">Activity name</label>
-						<input type="text" name="name" "id="name" placeholder="">
+					<div class="form-group">
+						<label >Activity name</label>
+						<input type="text" class="form-control" name="name" "id="name" placeholder="">
 
 					</div>
-					<div class="single-query">
-						<label for="keyword-input">Number of people</label>
-						<input type="text" name="num" id="num" placeholder="">
+					<div class="form-group">
+						<label >Number of people</label>
+						<input type="text" class="form-control" name="num" id="num" placeholder="">
 
 					</div>
-					<div class="single-query">
-						<label for="keyword-input">Sum</label>
-						<input type="text" name ="sum" id="sum" placeholder="">
+					<div class="form-group">
+						<label >Sum</label>
+						<input type="text" class="form-control" name ="sum" id="sum" placeholder="">
 
 					</div>
-					<div class="single-query">
+					<div class="form-group">
+						<label>Before or After</label>
+						<select name="BorA" class="form-control" id="BorA">
+							<option value="Before">Before</option>
+							<option value="After">After</option>
+						</select>
+					</div>
+					<div class="form-group">
 						<label>Payment type</label>
-						<select name="type" id="type">
-							<option value="1000 sf">Normal</option>
-							<option value="2000 sf">Girls for free</option>
-							<option value="3000 sf">Leaving early pay more</option>
-							<option value="4000 sf">Other</option>
+						<select name="type" class="form-control" id="type">
+							<option value="Normal">Normal</option>
+							<option value="Girls for free">Girls for free</option>
+							<option value="Leaving early pay more">Leaving early pay more</option>
 						</select>
 
 					</div>
 					<div class="query-submit-button pull-right">
-						<input type="submit" value="Create">
+						<input type="submit" class="btn btn-success btn-s-xs" value="Create">
 					</div>  
 				</div>
 			</form>
@@ -167,9 +160,7 @@ session.setAttribute("ename",ename);
 	</div>
 </section>
           </section>
-          <footer class="footer bg-white b-t b-light">
-            <p>This is a footer</p>
-          </footer>
+
         </section>
         <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="#nav"></a> </section>
       <aside class="bg-light lter b-l aside-md hide" id="notes">

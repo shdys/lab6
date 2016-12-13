@@ -39,26 +39,9 @@
     String sum = request.getParameter("sum");
     out.println(sum);
     String type = request.getParameter("type");
-    if(type.substring(0,1).equals("1"))
-    {
-    	type="Normal";
-    	response.sendRedirect("normal.jsp");
-    }
-    if(type.substring(0,1).equals("2"))
-	{
-		type="Girls for free";
-	    response.sendRedirect("Girls.jsp");
-	}
-    if(type.substring(0,1).equals("3"))
-	{
-		type="Leaving early pay more";
-		response.sendRedirect("Leaving.jsp");
-	}
-    if(type.substring(0,1).equals("4"))
-	{
-		type="Other";
-	}
     out.println(type);
+    String BorA = request.getParameter("BorA");
+    out.println(BorA);
 
     
     
@@ -68,16 +51,16 @@
     Statement stat = null; 
     ResultSet rs = null;
     Class.forName("com.mysql.jdbc.Driver"); 
-    String url = "jdbc:mysql://localhost:3306/draven"; 
+    String url = "jdbc:mysql://localhost:3306/aa_dutch"; 
     String user = "root"; 
-    String password = "4217";
+    String password = "1234";
     try{
  
 	conn = DriverManager.getConnection(url, user, password);
     stat = conn.createStatement(); 
     String IsVoteVary = "No";
     String IsCreaterVary = "Yes";
-    String sql = "insert into activity(Owner,Act_name,Number,Sum,Type,IsVote,IsCreater) values('" + ename + "','" + name + "','" + num + "','" + sum + "','" + type+ "','"+ IsVoteVary+ "','" + IsCreaterVary+ "')";
+    String sql = "insert into activity(Owner,Act_name,Number,Sum,Type,IsVote,IsCreater,BeforeOrAfter) values('" + ename + "','" + name + "','" + num + "','" + sum + "','" + type+ "','"+ IsVoteVary+ "','" + IsCreaterVary+"','" + BorA+ "')";
     stat.executeUpdate(sql); 
     rs = stat.executeQuery("select * from activity"); }
  
@@ -123,6 +106,25 @@ catch(Exception e){}
     }
     %>     
     <%  session.setAttribute("actname",name);  %>
+    
+    
+    
+<%     if(type.substring(0,1).equals("N"))
+    {
+    	response.sendRedirect("normal.jsp");
+    }
+    if(type.substring(0,1).equals("G"))
+	{
+	    response.sendRedirect("Girls.jsp");
+	}
+    if(type.substring(0,1).equals("L"))
+	{
+		response.sendRedirect("Leaving.jsp");
+	}
+    if(type.substring(0,1).equals("O"))
+	{
+		type="Other";
+	}%>
       </body>
 </html>
 

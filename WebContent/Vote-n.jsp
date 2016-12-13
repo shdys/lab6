@@ -34,16 +34,7 @@ session.setAttribute("ename",ename);
             <div class="clear"> <a href="#"><span class="text-white font-bold"><% out.println(ename); %></a></span> <small class="block">Art Director</small> <a href="#" class="btn btn-xs btn-success m-t-xs">Upgrade</a> </div>
           </div>
           <div class="row m-l-none m-r-none m-b-n-xs text-center">
-            <div class="col-xs-4">
-              <div class="padder-v"> <span class="m-b-xs h4 block text-white">245</span> <small class="text-muted">Followers</small> </div>
-            </div>
-            <div class="col-xs-4 dk">
-              <div class="padder-v"> <span class="m-b-xs h4 block text-white">55</span> <small class="text-muted">Likes</small> </div>
-            </div>
-            <div class="col-xs-4">
-              <div class="padder-v"> <span class="m-b-xs h4 block text-white">2,035</span> <small class="text-muted">Photos</small> </div>
-            </div>
-          </div>
+
         </section>
       </li>
     </ul>
@@ -51,12 +42,9 @@ session.setAttribute("ename",ename);
       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb-sm avatar pull-left"> <img src="images/avatar.jpg"> </span><% out.println(ename); %><b class="caret"></b> </a>
         <ul class="dropdown-menu animated fadeInRight">
           <span class="arrow top"></span>
-          <li> <a href="#">Settings</a> </li>
-          <li> <a href="profile.jsp">Profile</a> </li>
-          <li> <a href="#"> <span class="badge bg-danger pull-right">3</span> Notifications </a> </li>
-          <li> <a href="docs.jsp">Help</a> </li>
+          <li> <a href="index.jsp">Index</a> </li>
           <li class="divider"></li>
-          <li> <a href="modal.lockme.jsp" data-toggle="ajaxModal" >Logout</a> </li>
+          <li> <a href="signin.jsp" data-toggle="ajaxModal" >Logout</a> </li>
         </ul>
       </li>
     </ul>
@@ -77,9 +65,7 @@ session.setAttribute("ename",ename);
                   </li>
                   <li class="active"> <a href="#layout" > <i class="fa fa-columns icon"> <b class="bg-success"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>Vote</span> </a>
                     <ul class="nav lt">
-                      <li class="active"> <a href="Vote-n.jsp" class="active"> <i class="fa fa-angle-right"></i> <span>Normal</span> </a> </li>
-                      <li > <a href="Vote-g.jsp" > <i class="fa fa-angle-right"></i> <span>Girls-for-free</span> </a> </li>
-                      <li > <a href="Vote-l.jsp" > <i class="fa fa-angle-right"></i> <span>Leaving-early-more</span> </a> </li>
+                      <li class="active"> <a href="Vote-n.jsp" class="active"> <i class="fa fa-angle-right"></i> <span>Create and Vote</span> </a> </li>
                     </ul>
                   </li>
                   <li > <a href="Nonvoteafter.jsp" > <i class="fa fa-file-text icon"> <b class="bg-primary dker"></b> </i> <span>Non-vote-after</span> </a>

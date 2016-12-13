@@ -58,7 +58,9 @@
                   </li>
                   <li > <a href="#layout" > <i class="fa fa-columns icon"> <b class="bg-success"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>Vote</span> </a>
                     <ul class="nav lt">
-                      <li > <a href="Vote-n.jsp" > <i class="fa fa-angle-right"></i> <span>Create and Vote</span> </a> </li>
+                      <li > <a href="Vote-n.jsp" > <i class="fa fa-angle-right"></i> <span>Normal</span> </a> </li>
+                      <li > <a href="Vote-g.jsp" > <i class="fa fa-angle-right"></i> <span>Girls-for-free</span> </a> </li>
+                      <li > <a href="Vote-l.jsp" > <i class="fa fa-angle-right"></i> <span>Leaving-early-more</span> </a> </li>
                     </ul>
                   </li>
                   <li > <a href="Nonvoteafter.jsp" > <i class="fa fa-file-text icon"> <b class="bg-primary dker"></b> </i> <span>Non-vote-after</span> </a>
@@ -124,20 +126,20 @@
 				</script>							
  <div class="pricing-plans">
 					 <div class="wrap">
-				<div class="col-lg-8">			
+				<div class="col-lg-6">			
                     <section class="panel panel-default">
                       <header class="panel-heading bg-danger lt no-border">
                         <div class="clearfix"> <a href="#" class="pull-left thumb avatar b-3x m-r">  </a>
                           <div class="clear">
-                            <div class="h3 m-t-xs m-b-xs text-white"> <font size="6">Leaving Early Pay More Payment</font> <i class="fa fa-circle text-white pull-right text-xs m-t-sm"></i> </div>
+                            <div class="h3 m-t-xs m-b-xs text-white"> Leaving Early Pay More Payment <i class="fa fa-circle text-white pull-right text-xs m-t-sm"></i> </div>
                         </div>
                       </header>
                       
                       <div class="list-group no-radius alt">
-                      <a class="list-group-item" href="#"><span class="badge bg-success"> <font size="4"><s:property value="act.Number"/> </font></span>  <i class="fa fa-male icon-muted"></i><font size="4"> People: </font></a> 
-                      <a class="list-group-item" href="#"> <span class="badge bg-info"><font size="4"> <s:property value="act.Sum"/></font> </span> <i class="fa fa-money icon-muted"></i> <font size="4">Total money: </font></a> 
-                      <a class="list-group-item" href="#"> <span class="badge bg-light"><font size="4"> <s:property value="average"/> </font></span> <i class="fa fa-eye icon-muted"></i> <font size="4">Average payment for Normal: </font></a> 
-                      <a class="list-group-item" href="#"> <span class="badge bg-dark"><font size="4"> <s:property value="average*(1+Percent*0.01)"/></font> </span> <i class="fa fa-star-o icon-muted"></i> <font size="4">Payment for early leaving people: </font></a>
+                      <a class="list-group-item" href="#"><span class="badge bg-success"> <s:property value="act.Number"/> </span>  <i class="fa fa-male icon-muted"></i> People: </a> 
+                      <a class="list-group-item" href="#"> <span class="badge bg-info"> <s:property value="act.Sum"/> </span> <i class="fa fa-money icon-muted"></i> Total money: </a> 
+                      <a class="list-group-item" href="#"> <span class="badge bg-light"> <s:property value="average"/> </span> <i class="fa fa-eye icon-muted"></i> average payment for men: </a> 
+                      <a class="list-group-item" href="#"> <span class="badge bg-dark"> <s:property value="0"/> </span> <i class="fa fa-star-o icon-muted"></i> payment for female: </a>
                       
                       </div>
                     </section>

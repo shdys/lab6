@@ -40,12 +40,9 @@ session.setAttribute("ename",ename);
       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb-sm avatar pull-left"> <img src="images/avatar.jpg"> </span><% out.println(ename); %><b class="caret"></b> </a>
         <ul class="dropdown-menu animated fadeInRight">
           <span class="arrow top"></span>
-          <li> <a href="#">Settings</a> </li>
-          <li> <a href="profile.jsp">Profile</a> </li>
-          <li> <a href="#"> <span class="badge bg-danger pull-right">3</span> Notifications </a> </li>
-          <li> <a href="docs.jsp">Help</a> </li>
+          <li> <a href="index.jsp">Index</a> 
           <li class="divider"></li>
-          <li> <a href="modal.lockme.jsp" data-toggle="ajaxModal" >Logout</a> </li>
+          <li> <a href="signin.jsp" data-toggle="ajaxModal" >Logout</a> </li>
         </ul>
       </li>
     </ul>
@@ -66,9 +63,7 @@ session.setAttribute("ename",ename);
                   </li>
                   <li > <a href="#layout" > <i class="fa fa-columns icon"> <b class="bg-success"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> <span>Vote</span> </a>
                     <ul class="nav lt">
-                      <li > <a href="Vote-n.jsp" > <i class="fa fa-angle-right"></i> <span>Normal</span> </a> </li>
-                      <li > <a href="Vote-g.jsp" > <i class="fa fa-angle-right"></i> <span>Girls-for-free</span> </a> </li>
-                      <li > <a href="Vote-l.jsp" > <i class="fa fa-angle-right"></i> <span>Leaving-early-more</span> </a> </li>
+                      <li > <a href="Vote-n.jsp" > <i class="fa fa-angle-right"></i> <span>Create and Vote</span> </a> </li>
                     </ul>
                   </li>
                   <li > <a href="Nonvoteafter.jsp" > <i class="fa fa-file-text icon"> <b class="bg-primary dker"></b> </i> <span>Non-vote-after</span> </a>

@@ -24,9 +24,106 @@
             <result name="Girls for free">/girlsresult.jsp</result>
             <result name="Leaving early pay more">/leavingresult.jsp</result>
             <result name="ERROR">/error.jsp</result>
-        </action>
+     </action>
   
+	<action name="CreatVoteActivityName" class="Action.CreatVoteActivityNameAction" method="execute">
+			<result name="success">/CreatVoteSuccess.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
 
+	<action name="AllParticipants" class="Action.AllParticipantsAction" method="execute">
+			<result name="success">/AllParticipants.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
+
+	<action name="SearchUsersByName" class="Action.SearchUsersByNameAction" method="execute">
+			<result name="success">/SearchUsersResult.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
+
+	<action name="AddThisUserToParticipants" class="Action.AddThisUserToParticipantsAction" method="execute">
+			<result name="success">/CreatVoteSuccess.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
+	
+	<action name="CreatVoteActAndVote" class="Action.CreatVoteActAndVoteAction" method="execute">
+			<result name="success">/CreateVoteAndVoteSuccess.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
+	
+	<action name="AllVoteBeforeActivity" class="Action.AllVoteBeforeActivityAction" method="execute">
+			<result name="success">/AllVoteBeforeActivity.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
+	
+	<action name="VoteBeforeModify" class="Action.VoteBeforeModifyAction" method="execute">
+			<result name="Normal">/NormalNoVoteAfterModify.jsp</result>
+			<result name="Girls">/GirlsNoVoteAfterModify.jsp</result>
+			<result name="Leave">/LeaveNoVoteAfterModify.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
+	
+	<action name="AllNoVoteBeforeActivity" class="Action.AllNoVoteBeforeActivityAction" method="execute">
+			<result name="success">/AllNoVoteBeforeActivity.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
+	
+	<action name="NoVoteBeforeModify" class="Action.NoVoteBeforeModifyAction" method="execute">
+			<result name="Normal">/NormalNoVoteAfterModify.jsp</result>
+			<result name="Girls">/GirlsNoVoteAfterModify.jsp</result>
+			<result name="Leave">/LeaveNoVoteAfterModify.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
+	
+	<action name="AllSelfCreateActivity" class="Action.DravenTest4Action" method="execute">
+			<result name="success">/AllSelfCreateActivity.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
+	
+	<action name="AllSelfCreateActivityDetail" class="Action.AllSelfCRTACTDetailAction" method="execute">
+			<result name="IsVoteParticipant">/SelfParticipantVoteACTDetail.jsp</result>
+			<result name="IsVoteCreater">/SelfCreateVoteACTDetail.jsp</result>
+			<result name="NotVote">/SelfCreateNotVoteACTDetail.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
+	
+	<action name="ChangeParticipantChoice" class="Action.ChangeParticipantChoiceAction" method="execute">
+			<result name="success">/Success.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
+	
+	<action name="MakeACTType" class="Action.MakeACTTypeAction" method="execute">
+			<result name="Normal">/NormalVoteHandle.jsp</result>
+			<result name="Girls">/GirlsVoteHandle.jsp</result>
+			<result name="Leave">/LeaveVoteHandle.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
+	
+	<action name="ChangeLeave" class="Action.ChangeLeaveAction" method="execute">
+			<result name="success">/CreatVoteSuccess.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
+	
+	<action name="NormalVoteHandle" class="Action.NormalVoteHandleAction" method="execute">
+			<result name="success">/ShowVoteWholeTable.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
+	
+	<action name="ShowVoteWholeTable" class="Action.ShowVoteWholeTableAction" method="execute">
+			<result name="success">WholeVoteTable.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
+	
+	<action name="GirlsVoteHandle" class="Action.GirlsVoteHandleAction" method="execute">
+			<result name="success">/ShowVoteWholeTable.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
+	
+	<action name="LeaveVoteHandle" class="Action.LeaveVoteHandleAction" method="execute">
+			<result name="success">/ShowVoteWholeTable.jsp</result>
+			<result name="error">/Error.jsp</result>
+	</action>
+	
 	</package>  
 </struts>  
 
