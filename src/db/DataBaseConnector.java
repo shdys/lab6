@@ -7,7 +7,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DataBaseConnector {
+<<<<<<< HEAD
 	static String url = "jdbc:mysql://localhost:3306/aa_dutch";
+=======
+	static String url = "jdbc:mysql://localhost:3306/draven";
+>>>>>>> adc46026a2105fee7e64b6adbf17de99ff59855b
 	static String user = "root";
 	static String password = "1234";
 

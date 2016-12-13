@@ -5,11 +5,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Error</title>
+<<<<<<< HEAD
       <style type="text/css">
 body {
 	background-image: url(images/340362-106.jpg);
 }
 </style>
+=======
+>>>>>>> adc46026a2105fee7e64b6adbf17de99ff59855b
 </head>
 <body>
 <li><a href="javascript:history.back()">Return to the page of login and registration.</a></li>
