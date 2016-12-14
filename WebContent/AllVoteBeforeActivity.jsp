@@ -70,9 +70,9 @@ session.setAttribute("ename",ename);
                       <li > <a href="Vote-n.jsp" > <i class="fa fa-angle-right"></i> <span>Create and Vote</span> </a> </li>
                     </ul>
                   </li>
-                  <li > <a href="Nonvoteafter.jsp" > <i class="fa fa-file-text icon"> <b class="bg-primary dker"></b> </i> <span>Non-vote-after</span> </a>
+                  <li > <a href="DravenTest3.jsp" > <i class="fa fa-file-text icon"> <b class="bg-primary dker"></b> </i> <span>Non-vote-after</span> </a>
                   </li>
-                  <li class="active"> <a href="Voteafter.jsp" class="active"> <i class="fa fa-pencil icon"> <b class="bg-info"></b> </i> <span>Vote-after</span> </a> </li>
+                  <li class="active"> <a href="DravenTest2.jsp" class="active"> <i class="fa fa-pencil icon"> <b class="bg-info"></b> </i> <span>Vote-after</span> </a> </li>
                 </ul>
               </nav>
               <!-- / nav --> </div>
@@ -112,26 +112,25 @@ session.setAttribute("ename",ename);
           <header class="header bg-white b-b b-light">
             <p>Layout with black color</p>
           </header>
-          <section class="scrollable wrapper w-f">
 <table width="1200" border="1">
   <tr>
-    <th scope="col"><font size="5"> Creater</font></th>
-    <th scope="col"><font size="5"> Activity Name</font></th>
-    <th scope="col"><font size="5"> Number Of People</font></th>
-    <th scope="col"><font size="5"> Sum Money</font></th>
-    <th scope="col"><font size="5"> Pay Type</font></th>
-    <th scope="col"><font size="5"> Modify</font></th>
+    <th scope="col"><font size="5" >Creater</font></th>
+    <th scope="col"><font size="5" >Activity Name</font></th>
+    <th scope="col"><font size="5" >Number Of People</font></th>
+    <th scope="col"><font size="5" >Sum Money</font></th>
+    <th scope="col"><font size="5" >Pay Type</font></th>
+    <th scope="col"><font size="5" >Modify</font></th>
     
   </tr>
   
   <s:iterator value="AllVoteBeforeActivitys" id="AllVoteBeforeActivity" status="ss">
   <tr>
-    <td><font size="4"> <s:property value="#AllVoteBeforeActivity.Owner"/></font></td>
-    <td><font size="4"> <s:property value="#AllVoteBeforeActivity.Act_name"/></font></td>
-    <td><font size="4"> <s:property value="#AllVoteBeforeActivity.Number"/></font></td>
-    <td><font size="4"> <s:property value="#AllVoteBeforeActivity.Sum"/></font></td>
-    <td><font size="4"> <s:property value="#AllVoteBeforeActivity.Type"/></font></td>
-    <td><font size="4"> <a href='<s:url action="VoteBeforeModify"></font><s:param name="Type" value="#AllVoteBeforeActivity.Type"/></s:url>'><font size="4" color ="blue"> Modify</font></a></td>
+    <td><font size="4" ><s:property value="#AllVoteBeforeActivity.Owner"/></font></td>
+    <td><font size="4" ><s:property value="#AllVoteBeforeActivity.Act_name"/></font></td>
+    <td><font size="4" ><s:property value="#AllVoteBeforeActivity.Number"/></font></td>
+    <td><font size="4" ><s:property value="#AllVoteBeforeActivity.Sum"/></font></td>
+    <td><font size="4" ><s:property value="#AllVoteBeforeActivity.Type"/></font></td>
+    <td><a href='<s:url action="VoteBeforeModify"><s:param name="Type" value="#AllVoteBeforeActivity.Type"/></s:url>'><font size="4" color="blue">Modify</font></a></td>
     
   </tr>
   </s:iterator>
@@ -139,9 +138,7 @@ session.setAttribute("ename",ename);
 
 
 </table>
-          </section>
 
-        </section>
         <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="#nav"></a> </section>
       <aside class="bg-light lter b-l aside-md hide" id="notes">
         <div class="wrapper">Notification</div>

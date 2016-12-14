@@ -72,7 +72,7 @@ session.setAttribute("ename",ename);
                   </li>
                   <li > <a href="DravenTest3.jsp" > <i class="fa fa-file-text icon"> <b class="bg-primary dker"></b> </i> <span>Non-vote-after</span> </a>
                   </li>
-                  <li > <a href="Voteafter.jsp" > <i class="fa fa-pencil icon"> <b class="bg-info"></b> </i> <span>Vote-after</span> </a> </li>
+                  <li > <a href="DravenTest2.jsp" > <i class="fa fa-pencil icon"> <b class="bg-info"></b> </i> <span>Vote-after</span> </a> </li>
                 </ul>
               </nav>
               <!-- / nav --> </div>

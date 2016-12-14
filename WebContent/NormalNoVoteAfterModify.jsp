@@ -70,9 +70,9 @@ session.setAttribute("ename",ename);
                       <li > <a href="Vote-n.jsp" > <i class="fa fa-angle-right"></i> <span>Create and Vote</span> </a> </li>
                     </ul>
                   </li>
-                  <li > <a href="Nonvoteafter.jsp" > <i class="fa fa-file-text icon"> <b class="bg-primary dker"></b> </i> <span>Non-vote-after</span> </a>
+                  <li > <a href="DravenTest3.jsp" > <i class="fa fa-file-text icon"> <b class="bg-primary dker"></b> </i> <span>Non-vote-after</span> </a>
                   </li>
-                  <li class="active"> <a href="Voteafter.jsp" class="active"> <i class="fa fa-pencil icon"> <b class="bg-info"></b> </i> <span>Vote-after</span> </a> </li>
+                  <li class="active"> <a href="DravenTest2.jsp" class="active"> <i class="fa fa-pencil icon"> <b class="bg-info"></b> </i> <span>Vote-after</span> </a> </li>
                 </ul>
               </nav>
               <!-- / nav --> </div>
@@ -112,13 +112,11 @@ session.setAttribute("ename",ename);
           <header class="header bg-white b-b b-light">
             <p>Layout with black color</p>
           </header>
-          <section class="scrollable wrapper w-f">
 <form name="form1" id="ff1" method="post" action="NormalAfterCalculate" >				
-<input type="text" placeholder="Sum Price:" name="SumPrice" id="SumPrice" required>
-<input type="text" placeholder="Sum People Number:" name="SumPeopleNumber" id="SumPeopleNumber" required>
-<button type="submit" name="submit" id="submit">Submit</button>
+<input type="text" class="form-control" placeholder="Sum Price:" name="SumPrice" id="SumPrice" required>
+<input type="text" class="form-control" placeholder="Sum People Number:" name="SumPeopleNumber" id="SumPeopleNumber" required>
+<button class="btn btn-lg btn-primary btn-block" type="submit" name="submit" id="submit">Submit</button>
 </form>
-          </section>
 
         </section>
         <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="#nav"></a> </section>

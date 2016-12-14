@@ -74,7 +74,7 @@ session.setAttribute("ename",ename);
                   </li>
                   <li class="active"> <a href="DravenTest3.jsp" class="active"> <i class="fa fa-file-text icon"> <b class="bg-primary dker"></b> </i>  <span>Non-vote-after</span> </a>
                   </li>
-                  <li > <a href="Voteafter.jsp"> <i class="fa fa-pencil icon"> <b class="bg-info"></b> </i> <span>Vote-after</span> </a> </li>
+                  <li > <a href="DravenTest2.jsp"> <i class="fa fa-pencil icon"> <b class="bg-info"></b> </i> <span>Vote-after</span> </a> </li>
                 </ul>
               </nav>
               <!-- / nav --> </div>
@@ -114,26 +114,25 @@ session.setAttribute("ename",ename);
           <header class="header bg-white b-b b-light">
             <p>Layout with black color</p>
           </header>
-          <section class="scrollable wrapper w-f">
 <table width="1200" border="1">
   <tr>
-    <th scope="col">Creater</th>
-    <th scope="col">Activity Name</th>
-    <th scope="col">Number Of People</th>
-    <th scope="col">Sum Money</th>
-    <th scope="col">Pay Type</th>
-    <th scope="col">Modify</th>
+    <th scope="col"><font size="5">Creater</font></th>
+    <th scope="col"><font size="5">Activity Name</font></th>
+    <th scope="col"><font size="5">Number Of People</font></th>
+    <th scope="col"><font size="5">Sum Money</font></th>
+    <th scope="col"><font size="5">Pay Type</font></th>
+    <th scope="col"><font size="5">Modify</font></th>
     
   </tr>
   
   <s:iterator value="AllNoVoteBeforeActivitys" id="AllNoVoteBeforeActivity" status="ss">
   <tr>
-    <td><s:property value="#AllNoVoteBeforeActivity.Owner"/></td>
-    <td><s:property value="#AllNoVoteBeforeActivity.Act_name"/></td>
-    <td><s:property value="#AllNoVoteBeforeActivity.Number"/></td>
-    <td><s:property value="#AllNoVoteBeforeActivity.Sum"/></td>
-    <td><s:property value="#AllNoVoteBeforeActivity.Type"/></td>
-    <td><a href='<s:url action="NoVoteBeforeModify"><s:param name="Type" value="#AllNoVoteBeforeActivity.Type"/></s:url>'>Modify</a></td>
+    <td><font size="4"><s:property value="#AllNoVoteBeforeActivity.Owner"/></font></td>
+    <td><font size="4"><s:property value="#AllNoVoteBeforeActivity.Act_name"/></font></td>
+    <td><font size="4"><s:property value="#AllNoVoteBeforeActivity.Number"/></font></td>
+    <td><font size="4"><s:property value="#AllNoVoteBeforeActivity.Sum"/></font></td>
+    <td><font size="4"><s:property value="#AllNoVoteBeforeActivity.Type"/></font></td>
+    <td><a href='<s:url action="NoVoteBeforeModify"><s:param name="Type" value="#AllNoVoteBeforeActivity.Type"/></s:url>'><font size="4" color ="blue">Modify</font></a></td>
     
   </tr>
   </s:iterator>
@@ -141,7 +140,6 @@ session.setAttribute("ename",ename);
 
 
 </table>
-          </section>
 
         </section>
         <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="#nav"></a> </section>

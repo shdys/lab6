@@ -14,6 +14,7 @@
 <!--[if lt IE 9]> <script src="js/ie/html5shiv.js" cache="false"></script> <script src="js/ie/respond.min.js" cache="false"></script> <script src="js/ie/excanvas.js" cache="false"></script> <![endif]-->
 </head>
 <body>
+
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -70,7 +71,7 @@ session.setAttribute("ename",ename);
                       <li > <a href="Vote-n.jsp" > <i class="fa fa-angle-right"></i> <span>Create and Vote</span> </a> </li>
                     </ul>
                   </li>
-                  <li > <a href="Nonvoteafter.jsp" > <i class="fa fa-file-text icon"> <b class="bg-primary dker"></b> </i> <span>Non-vote-after</span> </a>
+                  <li > <a href="DravenTest3.jsp" > <i class="fa fa-file-text icon"> <b class="bg-primary dker"></b> </i> <span>Non-vote-after</span> </a>
                   </li>
                   <li class="active"> <a href="Voteafter.jsp" class="active"> <i class="fa fa-pencil icon"> <b class="bg-info"></b> </i> <span>Vote-after</span> </a> </li>
                 </ul>
@@ -112,14 +113,37 @@ session.setAttribute("ename",ename);
           <header class="header bg-white b-b b-light">
             <p>Layout with black color</p>
           </header>
-<form name="form1" id="ff1" method="post" action="LeaveAfterCalculate" >				
-<input type="text" placeholder="Sum Price:" name="SumPrice" id="SumPrice" required>
-<input type="text" placeholder="Sum People Number:" name="SumPeopleNumber" id="SumPeopleNumber" required>
-<input type="text" placeholder="Sum Leaving People Number:" name="SumLeavingPeopleNumber" id="SumLeavingPeopleNumber" required>
-<input type="text" placeholder="Pay More Percentage:" name="PayMorePercentage" id="PayMorePercentage" required>
-<button type="submit" name="submit" id="submit">Submit</button>
-</form>
-
+<table width="1200" border="1">
+  <tr>
+  	<th scope="col">Act_name</th>
+    <th scope="col">UserName</th>
+    <th scope="col">UserEmail</th>
+    <th scope="col">UserSex</th>
+    <th scope="col">LeaveEarly</th>
+    <th scope="col">PayMorePercentage</th>
+    <th scope="col">MoneyShouldPay</th>
+    <th scope="col">Sum</th>
+    <th scope="col">Type</th>
+    <th scope="col">IsCreater</th>
+    <th scope="col">VoteResult</th>
+  </tr>
+  
+  <s:iterator value="Participants" id="VoteParticipant" status="ss">
+  <tr>
+  	<td><s:property value="Act_name"/></td>
+    <td><s:property value="#VoteParticipant.userName"/></td>
+    <td><s:property value="#VoteParticipant.userEmail"/></td>
+    <td><s:property value="#VoteParticipant.userSex"/></td>
+    <td><s:property value="#VoteParticipant.leaveEarly"/></td>
+    <td><s:property value="#VoteParticipant.payMorePercentage"/></td>
+    <td><s:property value="#VoteParticipant.moneyShouldPay"/></td>
+    <td><s:property value="#VoteParticipant.Sum"/></td>
+    <td><s:property value="#VoteParticipant.Type"/></td>
+    <td><s:property value="#VoteParticipant.IsCreater"/></td>
+    <td><s:property value="#VoteParticipant.VoteResult"/></td>
+  </tr>
+  </s:iterator>
+</table>
         </section>
         <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="#nav"></a> </section>
       <aside class="bg-light lter b-l aside-md hide" id="notes">
